@@ -1,0 +1,22 @@
+      body{background-color: #121314;}
+      .contendedor_div{margin-top: 90px;border:1px solid white;border-radius:5px;padding-top:7px;margin-bottom:50px}
+      .texto_principal{color: white}
+      .img_log{width: 90px;width: 90px; margin-bottom: 17px;}
+      .log_sm_mas{color:green;font-size:1.1em}
+      .log_sm_borrar{color:red;font-size:1.1em}
+      .log_sm{color:#414141;font-size: 1.2em}
+
+      .color_text{color:white;}
+      .color_orange{color:#e06000;}
+      .div_info{background-color: rgba(18,19,20,.1);}
+      .text_cliente{color:#e06000; font-size: 1.25em}
+      .barra_nav{background-color:#202122;border-radius: 2px;padding-top:5px;padding-bottom:4px;  }
+      .div_pr{background-color:#202122;  border:1px solid black;padding: 12px;margin-bottom:35px;}
+      select.slc_sm{height:20px;}
+      input.search_sm{height: 20px;}
+    
+      .btn-ind{background-color:#202122;color:white;margin-bottom: 40px;border:1px solid #e06000;}
+      a.btn-ind:hover{text-decoration:none;color: white;}
+
+      select.slc_check{height:32px;background-color: black;color:white;border-radius: 3px;}
+      .div_check{background-color:black;color:white;border-radius: 2px}
