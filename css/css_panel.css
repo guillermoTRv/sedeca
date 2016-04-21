@@ -8,6 +8,8 @@
 
       .color_text{color:white;}
       .color_orange{color:#e06000;}
+      .color_orange_a{text-decoration:none;color:#e06000;}
+      a.color_orange_a:hover{text-decoration:none;color:#e06000;}
       .div_info{background-color: rgba(18,19,20,.1);}
       .text_cliente{color:#e06000; font-size: 1.25em}
       .barra_nav{background-color:#202122;border-radius: 2px;padding-top:5px;padding-bottom:4px;  }

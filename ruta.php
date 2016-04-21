@@ -1,3 +1,3 @@
 <?php 
-	global $ruta; $ruta = "http://localhost/work";
-?>
+	global $ruta; $ruta = "http://workseguridad.esy.es";
+?
