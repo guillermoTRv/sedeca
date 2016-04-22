@@ -1,0 +1,20 @@
+    <div class="row" style='margin-bottom:17px;margin-top:10px;'>
+        <div class="col-md-6">
+            <h2 class='color_orange'>Multiproseg</h2>
+        </div>
+        <div class="col-md-3 pull-right">
+            <h4 class='color_text'><?php echo $dato_encabezado; ?></h4>
+            <h4><a class='color_orange_a' href="<?php echo $ruta ?>/cerrar_lg.php">Logout</a></h4>
+        </div>  
+    </div>
+
+    <div class="row" style='background-color:#202122;padding-top:8px;margin-bottom:12px;padding-left:10px;'>
+        <div class="col-md-3" style='font-size:1.25em;margin-left:35px;'>
+            <p class="color_text">
+                <?php echo $dato_derecho; ?>
+            </p>
+        </div>
+        <div class="col-md-3 pull-right">
+            <p class='color_text' style='font-size:1.25em;'><?php echo $name_area ?></p>
+        </div>
+    </div>

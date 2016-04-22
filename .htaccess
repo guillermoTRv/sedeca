@@ -1,0 +1,4 @@
+RewriteEngine on
+
+Rewriterule ^panel/(.*)/(.*) panel.php?cl=$1&nav=$2
+Rewriterule ^panel/(.*) panel.php?cl=$1

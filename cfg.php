@@ -2,9 +2,9 @@
 	$servidor  ="localhost";
 	$usuario   ="root";
 	$password  ="";
-	$bd        ="";
+	$bd        ="work";
 
-	global $con;
-	$con=mysqli_connect($servidor,$usuario,$password,$bd);
+	global $enlace;
+	$enlace=mysqli_connect($servidor,$usuario,$password,$bd);
 
  ?>

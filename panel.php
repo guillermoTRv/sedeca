@@ -1,5 +1,26 @@
+<?php 
+   include("ruta.php");
+   include("sanitizar.php");
+   include("input_toquen.php");
+   include("cfg.php");
+   include("time_fecha.php");
+
+   $cliente = sanitizar($_GET['cl']);
+   $nav     = sanitizar($_GET['nav']);
+
+   session_start();
+   $usuario_sys     =  $_SESSION['usuario_sys'];
+
+   $dato_encabezado = $usuario_sys;
+   $dato_derecho    = $cliente;
+   $name_area       = 'Cordinación Agencias';
+
+   #podriamos hacer un control de url que solo permita ciertas url y en caso de que no reconozca algun redirgir a una pagina
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,50 +28,37 @@
     
     <title>Panel de uso</title>
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/css_panel.css" rel="stylesheet">
+    <link href="<?php echo $ruta ?>/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo $ruta ?>/css/css_panel.css" rel="stylesheet">
   </head>
   <body>
 
+    <style type="text/css">
+      .icon_izq{font-size: 3.4em;text-align: center;margin-left: 22px;margin-bottom:20px;margin-top:13px;color: black }
+      td{color:#F2F2F2;}
 
+    </style>
     <div class="container">
       <div class="row">
         <div class="col-md-12 contendedor_div">
-          <div class="row" style='margin-bottom:17px;margin-top:10px;'>
-            <div class="col-md-6">
-                <h2 class='color_orange'>Multiproseg</h2>
-            </div>
-            <div class="col-md-3 pull-right">
-                <h4 class='color_text'>Administrador</h4>
-                <h4 class='color_orange'>Logout</h4>
-            </div>
-          </div>
-
-          <div class="row" style='background-color:#202122;padding-top:8px;margin-bottom:12px;padding-left:10px;'>
-            <div class="col-md-3">
-              <p class='text_cliente'>Senasica</p>
-            </div>
-            <div class="col-md-3 pull-right">
-              <p class='color_text' style='font-size:1.25em;'>Guardias</p>
-            </div>
-          </div>
-
+          <?php include("panel_sys/encabezado_sys.php"); ?>
+          
           <div class="row">
             <div class="col-md-1" style='margin-right:22px;'>
-              <a href="">
-                  <img src="Iconos/Inmuebles.png" class='img_log'>
+              <a href="<?php echo "$ruta/panel/$cliente/usuarios" ?>">
+                  <span class='glyphicon glyphicon-user icon_izq'></span>
               </a>
-              <a href="">
-                  <img src="Iconos/Check.png" class='img_log'>
+              <a href="<?php echo "$ruta/panel/$cliente/inmuebles" ?>">
+                  <img src="../../Iconos/Check.png" class='img_log'>
               </a>
-              <a href="">
-                  <img src="Iconos/Inmuebles.png" class='img_log'>
+              <a href="<?php echo "$ruta/panel/$cliente/check" ?>">
+                  <img src="../../Iconos/Inmuebles.png" class='img_log'>
               </a>
-              <a href="">
-                  <img src="Iconos/Check.png" class='img_log'>
+              <a href="<?php echo "$ruta/panel/$cliente/servicios" ?>">
+                  <span class='glyphicon glyphicon-globe icon_izq' style='margin-top:11px;'></span>
               </a>
-              <a href="">
-                  <img src="Iconos/Inmuebles.png" class='img_log'>
+              <a href="<?php echo "$ruta/panel/$cliente/reportes" ?>">
+                  <span class='glyphicon glyphicon-list-alt icon_izq' style='margin-top:17px;'></span>
               </a>
                 
 
@@ -66,7 +74,9 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <span class='glyphicon glyphicon-plus log_sm_mas'></span>&nbsp;&nbsp;&nbsp;
+                    <a class='a_limpia' href="<?php echo "$ruta/panel/$cliente/crear" ?>">
+                      <span class='glyphicon glyphicon-plus log_sm_mas'></span>&nbsp;&nbsp;&nbsp;
+                    </a>
                     <span class='glyphicon glyphicon-trash log_sm_borrar'></span>&nbsp;&nbsp;&nbsp;
                     <span class='glyphicon glyphicon-cog log_sm'></span>&nbsp;&nbsp;&nbsp;
                     <span class='glyphicon glyphicon-cloud-download log_sm'></span>&nbsp;&nbsp;&nbsp;
@@ -77,86 +87,45 @@
                 <div class="col-md-3 col-md-offset-2 pull-right">
                     <form id="form_seccion" method='POST'>
                         <div class="input-group">
-                          <input type="text" class="form-control search_sm" placeholder="Search for...">
+                          <input type="search" class="form-control search_sm" placeholder="Search for...">
                           <span class="input-group-btn search_sm">
-                            <button class="btn btn-default" type="button" style='height:20px;'></button>
+                            <button class="btn btn-default" type="button" style='height:20px;'>
+                            </button>
                           </span>
                         </div>
                     </form>
                 </div>
               </div>
               <div class="row div_pr">
-                <div>
-                  <table class="table" style='color:#353637;border:1px solid #e06000;border-radius:4px;'>
-                     <thead>
-                        <tr>   
-                          <th>Nombre</th>
-                          <th>Edad</th>
-                          <th>Domicilio</th>
-                          <th>Curp</th>
-                          <th>Inmueble</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                          <td>Guillermo Villgran</td>
-                          <td>20</td>
-                          <td>Av 16 de Septiembre No.98 Col. Bonfil</td>
-                          <td>RGLSHAJ199607803912</td>
-                          <td>Grupo Carso</td>
-                        </tr>
-                        <tr>
-                          <td>Guillermo Villgran</td>
-                          <td>20</td>
-                          <td>Av 16 de Septiembre No.98 Col. Bonfil</td>
-                          <td>RGLSHAJ199607803912</td>
-                          <td>Grupo Carso</td>
-                        </tr>
-                        <tr>
-                          <td>Guillermo Villgran</td>
-                          <td>20</td>
-                          <td>Av 16 de Septiembre No.98 Col. Bonfil</td>
-                          <td>RGLSHAJ199607803912</td>
-                          <td>Grupo Carso</td>
-                        </tr>
-                        <tr>
-                          <td>Guillermo Villgran</td>
-                          <td>20</td>
-                          <td>Av 16 de Septiembre No.98 Col. Bonfil</td>
-                          <td>RGLSHAJ199607803912</td>
-                          <td>Grupo Carso</td>
-                        </tr>
-                        <tr>
-                          <td>Guillermo Villgran</td>
-                          <td>20</td>
-                          <td>Av 16 de Septiembre No.98 Col. Bonfil</td>
-                          <td>RGLSHAJ199607803912</td>
-                          <td>Grupo Carso</td>
-                        </tr>
-                        <tr>
-                          <td>Guillermo Villgran</td>
-                          <td>20</td>
-                          <td>Av 16 de Septiembre No.98 Col. Bonfil</td>
-                          <td>RGLSHAJ199607803912</td>
-                          <td>Grupo Carso</td>
-                        </tr>
-                        <tr>
-                          <td>Guillermo Villgran</td>
-                          <td>20</td>
-                          <td>Av 16 de Septiembre No.98 Col. Bonfil</td>
-                          <td>RGLSHAJ199607803912</td>
-                          <td>Grupo Carso</td>
-                        </tr>
-                        <tr>
-                          <td>Guillermo Villgran</td>
-                          <td>20</td>
-                          <td>Av 16 de Septiembre No.98 Col. Bonfil</td>
-                          <td>RGLSHAJ199607803912</td>
-                          <td>Grupo Carso</td>
-                        </tr>
-                    </tbody>
-                  </table>
-                </div>
+                <?php
+                  switch ($nav) {
+                    case 'usuarios':
+                        include("panel_sys/table_usuarios.php"); 
+                    break;
+
+                    case 'crear':
+                        include("panel_sys/crear_usuarios.php"); 
+                    break;
+
+                    case 'inmuebles':
+                        include("panel_sys/table_inmuebles.php"); 
+                      break;
+
+                    case 'check':
+                        include("panel_sys/table_inmuebles.php"); 
+                      break;
+
+                    case 'servicios':
+                        include("panel_sys/table_inmuebles.php"); 
+                      break;
+
+                    case 'reportes':
+                        include("panel_sys/table_inmuebles.php"); 
+                      break;
+                
+                     
+                   }  
+                ?>
               </div>
             </div>
           </div>  
@@ -164,7 +133,7 @@
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
   </body>
 </html>
 
