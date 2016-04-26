@@ -2,19 +2,18 @@
     include("ruta.php");
 
     session_start();
-    $usuario_sys   =  $_SESSION['usuario_sys'];
+    $type_user   =  $_SESSION['type_user'];
 
     date_default_timezone_set('America/Mexico_City');
     $fecha                =  date("Y-m-d");
         
-    if ($usuario_sys != "administrador") {
+    if ($type_user != "administrador") {
         header("Location: $ruta");
     }
 
-    $dato_encabezado = $usuario_sys;
-    $dato_derecho    = $fecha;
-    $name_area       = 'Cordinación Agencias';
-
+    $tipo_usuario_encabezado = $type_user;
+    $dato_izquierdo          = $fecha;
+    $name_area               = 'Cordinación Agencias'; 
 
 ?>
 <!DOCTYPE html>
@@ -25,8 +24,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Ponerle la etiqueta para que google no indexe el contenido-->
     <title>Listado de clientes</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/css_panel.css" rel="stylesheet">
+    <link href="<?php echo $ruta ?>/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo $ruta ?>/css/css_panel.css" rel="stylesheet">
   </head>  
   <body>
     
@@ -36,7 +35,7 @@
             <?php 
                 include("panel_sys/encabezado_sys.php");
             ?>
-            <div class="row">
+            <div class="row" style='margin-bottom:30px;'>
                 <br>
                 <div class="col-md-10 col-md-offset-1 div_clientes">
                     <div class="col-md-4 col-md-offset-1">
@@ -60,7 +59,6 @@
                         <a disabled style='width:170px;' href='?op=listado'class='btn btn-sm btn-ind'>
                             Innn 
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -69,7 +67,6 @@
         </div>
       </div>
     </div>
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
 

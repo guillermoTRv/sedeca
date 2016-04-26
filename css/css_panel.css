@@ -14,7 +14,7 @@
       .text_cliente{color:#e06000; font-size: 1.25em}
       .barra_nav{background-color:#202122;border-radius: 2px;padding-top:5px;padding-bottom:4px;  }
       .div_pr{background-color:#202122;  border:1px solid black;padding: 12px;margin-bottom:35px;}
-      select.slc_sm{height:20px;}
+      select.slc_sm{height:20px;font-size:}
       input.search_sm{height: 20px;}
     
       .btn-ind{background-color:#202122;color:white;margin-bottom: 40px;border:1px solid #e06000;font-size:1.15em;}
@@ -32,5 +32,5 @@
 
       label{color:#f2f2f2;}
       input.input-sm_user{height: 20px;background-color:#E6E6E6}
-      select.select-sm_user{height: 20px;background-color:#E6E6E6;margin-top: 25px}
+      select.select-sm_user{height: 20px;background-color:#E6E6E6;margin-top: 28px;font-size:.9em;padding:0px}
       .espacio_input{padding-left:26px;padding-right: 26px}

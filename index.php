@@ -1,4 +1,7 @@
-<?php include("input_toquen.php"); ?>
+<?php 
+    include("input_toquen.php"); 
+    include("ruta.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +14,10 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/form-elements.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="<?php echo $ruta ?>/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo $ruta ?>/assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?php echo $ruta ?>/assets/css/form-elements.css">
+        <link rel="stylesheet" href="<?php echo $ruta ?>/assets/css/style.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,12 +44,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Multiproseg</strong> - A quien valor merece</h1>
-                            <div class="description">
-                                <p>
-                                    Recuerde entrar solo a su respectiva area - Que tenga un buen dia de trabajo
-                                </p>
-                            </div>
+                            <img src="Iconos/logo_empresa.png">
                         </div>
                     </div>
                     <div class="row">

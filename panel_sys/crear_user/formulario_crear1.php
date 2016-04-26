@@ -53,7 +53,7 @@
 		</center>
 	</div>
 
-	<div class="row">
+	<div class="row" style='padding:10px;'>
 		<div class="col-md-4 espacio_input">
 			<p class="text_label">Calle</p>
 			<input type='text' class='form-control input-sm_user' placeholder=''>
@@ -67,7 +67,7 @@
 			<input type='text' class='form-control input-sm_user' placeholder=''>
 		</div>
 	</div>
-	<div class="row" style='margin-top:10px;'>
+	<div class="row" style='margin-top:10px;padding:10px;'>
 		<div class="col-md-4 espacio_input">
 			<p class="text_label">Colonia</p>
 			<input type='text' class='form-control input-sm_user' placeholder=''>
@@ -78,19 +78,15 @@
 		</div>
 		<div class="col-md-4 espacio_input">
 			<select class='form-control select-sm_user'>
-				<option>Estado</option>
+				<option style='font-size:.7em;'>Entidad Federativa</option>
 			</select>
 		</div>
 	</div>
-	<div class="row" style='margin-top:10px;'>
+	<div class="row" style='margin-top:10px;padding:10px;'>
 		<div class="col-md-4 espacio_input">
 			<select class='form-control select-sm_user'>
-				<option>Municipio/Delegacion</option>
+				<option>Municipio o Delegacion</option>
 			</select>
-		</div>
-		<div class="col-md-4 espacio_input">
-			<p class='text_label'>Ciudad</p>
-			<input type='text' class='form-control input-sm_user' placeholder=''>
 		</div>
 		<div class="col-md-4 espacio_input">
 			<p class='text_label'>Mobil</p>

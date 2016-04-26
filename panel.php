@@ -4,16 +4,27 @@
    include("input_toquen.php");
    include("cfg.php");
    include("time_fecha.php");
+   include("notificacion_errores.php");
 
-   $cliente = sanitizar($_GET['cl']);
-   $nav     = sanitizar($_GET['nav']);
+   
+
+   $user_get  = sanitizar($_GET['us']);
+   $nav       = sanitizar($_GET['nav']);
 
    session_start();
-   $usuario_sys     =  $_SESSION['usuario_sys'];
+   $type_user       =  $_SESSION['type_user'];
+   $name_user       =  $_SESSION['name_user'];
+   include("panel_sys/datos_encabezado.php");
+   include("variables_get.php");
 
-   $dato_encabezado = $usuario_sys;
-   $dato_derecho    = $cliente;
-   $name_area       = 'Cordinación Agencias';
+
+
+   if ($nav == "usuarios" or $nav == "crear") {
+        $ruta_agregar = "crear";
+   }
+   if ($nav == "inmuebles" or $nav == "crear_inmueble") {
+        $ruta_agregar = "crear_inmueble"; 
+   }
 
    #podriamos hacer un control de url que solo permita ciertas url y en caso de que no reconozca algun redirgir a una pagina
 
@@ -45,21 +56,17 @@
           
           <div class="row">
             <div class="col-md-1" style='margin-right:22px;'>
-              <a href="<?php echo "$ruta/panel/$cliente/usuarios" ?>">
-                  <span class='glyphicon glyphicon-user icon_izq'></span>
-              </a>
-              <a href="<?php echo "$ruta/panel/$cliente/inmuebles" ?>">
-                  <img src="../../Iconos/Check.png" class='img_log'>
-              </a>
-              <a href="<?php echo "$ruta/panel/$cliente/check" ?>">
-                  <img src="../../Iconos/Inmuebles.png" class='img_log'>
-              </a>
-              <a href="<?php echo "$ruta/panel/$cliente/servicios" ?>">
-                  <span class='glyphicon glyphicon-globe icon_izq' style='margin-top:11px;'></span>
-              </a>
-              <a href="<?php echo "$ruta/panel/$cliente/reportes" ?>">
-                  <span class='glyphicon glyphicon-list-alt icon_izq' style='margin-top:17px;'></span>
-              </a>
+              <?php
+                if ($type_user=='administrador') {
+                    include("panel_sys/rutas/rutas_admin.php");    
+                 }
+                if ($type_user=='supervisor') {
+                    include("panel_sys/rutas/rutas_supervisor.php");
+                 }
+                if ($type_user=='guardia') {
+                    include("panel_sys/rutas/rutas_guardia.php");
+                 } 
+              ?>
                 
 
             </div>
@@ -74,15 +81,8 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <a class='a_limpia' href="<?php echo "$ruta/panel/$cliente/crear" ?>">
-                      <span class='glyphicon glyphicon-plus log_sm_mas'></span>&nbsp;&nbsp;&nbsp;
-                    </a>
-                    <span class='glyphicon glyphicon-trash log_sm_borrar'></span>&nbsp;&nbsp;&nbsp;
-                    <span class='glyphicon glyphicon-cog log_sm'></span>&nbsp;&nbsp;&nbsp;
-                    <span class='glyphicon glyphicon-cloud-download log_sm'></span>&nbsp;&nbsp;&nbsp;
-                    <span class='glyphicon glyphicon-floppy-disk log_sm'></span>&nbsp;&nbsp;&nbsp;
-                    <span class='glyphicon glyphicon-envelope log_sm'></span>&nbsp;&nbsp;&nbsp;
-                    <span class='glyphicon glyphicon-search log_sm'></span>
+                  <?php include("panel_sys/opciones_por_usuario.php"); ?>
+                    
                 </div>
                 <div class="col-md-3 col-md-offset-2 pull-right">
                     <form id="form_seccion" method='POST'>
@@ -98,33 +98,7 @@
               </div>
               <div class="row div_pr">
                 <?php
-                  switch ($nav) {
-                    case 'usuarios':
-                        include("panel_sys/table_usuarios.php"); 
-                    break;
-
-                    case 'crear':
-                        include("panel_sys/crear_usuarios.php"); 
-                    break;
-
-                    case 'inmuebles':
-                        include("panel_sys/table_inmuebles.php"); 
-                      break;
-
-                    case 'check':
-                        include("panel_sys/table_inmuebles.php"); 
-                      break;
-
-                    case 'servicios':
-                        include("panel_sys/table_inmuebles.php"); 
-                      break;
-
-                    case 'reportes':
-                        include("panel_sys/table_inmuebles.php"); 
-                      break;
-                
-                     
-                   }  
+                    include("panel_sys/controlador_por_usuarios.php");  
                 ?>
               </div>
             </div>

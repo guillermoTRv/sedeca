@@ -11,10 +11,10 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="tab-content">
-	    		<div role="tabpanel" class="tab-pane" id="home" style='margin-bottom:20px;'>
+	    		<div role="tabpanel" class="tab-pane in active" id="home" style='margin-bottom:20px;'>
 	    			<?php include("panel_sys/crear_user/formulario_crear1.php"); ?>
 	    		</div>
-			    <div role="tabpanel" class="tab-pane in active" id="profile">
+			    <div role="tabpanel" class="tab-pane" id="profile">
 			    	<?php include("panel_sys/crear_user/formulario_crear2.php"); ?>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="ejercicio">
