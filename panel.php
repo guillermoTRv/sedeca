@@ -19,7 +19,7 @@
 
 
 
-   if ($nav == "usuarios" or $nav == "crear") {
+   if ($nav == "guardias" or $nav == "supervisores" or $nav == "clientes" or $nav == "crear") {
         $ruta_agregar = "crear";
    }
    if ($nav == "inmuebles" or $nav == "crear_inmueble") {
@@ -41,6 +41,9 @@
 
     <link href="<?php echo $ruta ?>/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo $ruta ?>/css/css_panel.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="<?php echo $ruta ?>/js/ajax.js"></script>
   </head>
   <body>
 
@@ -67,32 +70,39 @@
                     include("panel_sys/rutas/rutas_guardia.php");
                  } 
               ?>
-                
-
+              
             </div>
             <div class="col-md-10">
               
               <div class="row barra_nav">
                 <div class="col-md-3">
                     <form id="form_seccion" method='POST'>
-                        <select class="form-control slc_sm">
-
+                        <select class="form-control select-sm_user" style='margin:0px;' id='consulta-lista-personal'>
+                            <option value='guardias' <?php if($nav=="guardias"){ echo " selected"; } ?>>Guardias</option>
+                            <option value='supervisores' <?php if($nav=="supervisores"){ echo " selected"; } ?>>Supervisores</option>
+                            <option value='clientes' <?php if($nav=="clientes"){ echo " selected"; } ?>>Clientes</option>
                         </select>
                     </form>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <?php include("panel_sys/opciones_por_usuario.php"); ?>
                     
                 </div>
                 <div class="col-md-3 col-md-offset-2 pull-right">
                     <form id="form_seccion" method='POST'>
-                        <div class="input-group">
-                          <input type="search" class="form-control search_sm" placeholder="Search for...">
-                          <span class="input-group-btn search_sm">
-                            <button class="btn btn-default" type="button" style='height:20px;'>
-                            </button>
-                          </span>
-                        </div>
+                      <?php 
+                        if ($user_get != 'guardia') {
+                          ?>
+                            <div class="input-group">
+                              <input type="search" class="form-control search_sm" placeholder="Search for...">
+                              <span class="input-group-btn search_sm">
+                                <button class="btn btn-default" type="button" style='height:20px;'>
+                                </button>
+                              </span>
+                            </div>
+                          <?php
+                        }
+                      ?>
                     </form>
                 </div>
               </div>
@@ -106,8 +116,18 @@
         </div>  
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
+    <?php echo "
+    <script>
+      window.onload= function()
+      {
+        var lista= document.getElementById('consulta-lista-personal');
+        lista.onchange = function()
+        {
+          window.location='$ruta/panel/$user_get/'+lista.value;
+        };
+      }
+    </script>";
+    ?>
   </body>
 </html>
 

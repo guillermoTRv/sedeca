@@ -1,5 +1,5 @@
 		<div style='border:2px solid #e06000;margin-bottom:20px;'>	
-				   <div class="row" style='background-color:rgba(0, 0, 0, .7);margin-left:1px;margin-right:1px;margin-top:1px;padding-left:12px;border:1px solid #e06000;'>
+				   <div class="row" style='background-color:rgba(0, 0, 0, .4);margin-left:1px;margin-right:1px;margin-top:1px;padding-left:12px;border:1px solid #e06000;'>
                      <center>
                      	<h3 style='margin-bottom:20px;margin-top:20px;margin-left:-14px;color:#f2f2f2;'>Asistencias</h3>
                      </center>
@@ -23,9 +23,12 @@
                    </div>
  
 
-            
+                   <?php  
+                    if ($type_user == "guardia") {
+                    ?>  
+                    
                    <div class="row" style='margin-top:40px;padding-left:20px;padding-right:20px;'>
-                     <div class="col-md-10 col-md-offset-1" style='padding-top:4px;padding-bottom:-4px;background-color:rgba(0,0,0,.7);border:solid 1px white;border-radius:3px;'>
+                     <div class="col-md-10 col-md-offset-1" style='padding-top:4px;padding-bottom:-4px;background-color:rgba(0,0,0,.5);border:solid 1px white;border-radius:3px;'>
                         <center>
                           <p style='margin-bottom:4px;color:white'>Check list</p>
                         </center>
@@ -33,7 +36,7 @@
                    </div>
  
                    <div class="row  espacio_input" style='margin-top:20px;'>
-                      <div class="col-md-10 col-md-offset-1" style='background-color:rgba(0,0,0,.7);border-radius:5px;'>
+                      <div class="col-md-10 col-md-offset-1" style='background-color:rgba(0,0,0,.5);border-radius:5px;'>
                         
                         <div class="row">
                           <div class="col-md-3">
@@ -97,4 +100,10 @@
                       </div>
                     </div>
                     <br><br>
+                    <?php
+                    }
+                    if ($type_user == "supervisor") {
+                      ?><br><br><br><br><?php
+                    }
+                   ?>
                 </div>

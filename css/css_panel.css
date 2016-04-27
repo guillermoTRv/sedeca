@@ -4,7 +4,20 @@
       .img_log{width: 84px;width: 86px; margin-bottom: 17px;}
       .log_sm_mas{color:green;font-size:1.1em}
       .log_sm_borrar{color:#DF0101;font-size:1.1em}
-      .log_sm{color:rgba(0, 0, 0, .7);font-size: 1.2em}
+      .log_sm{color:rgba(0, 0, 0, .7);font-size: 1.3em}
+
+      .log_sm_mas:hover{color:#9FF781;}
+      .log_sm_borrar:hover{color: #FA5858}
+      .log_sm:hover{color:#f2f2f2}
+      .log_sm{
+            transition:all .5s ease-out;
+      }
+      .log_sm_mas{
+            transition:all .5s ease-out;     
+      }
+      .log_sm_borrar{
+            transition:all .5s ease-out;
+      }
 
       .color_text{color:white;}
       .color_orange{color:#e06000;}

@@ -11,14 +11,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr ondblclick="myFunction()">
                           <td>Guillermo Villgran</td>
                           <td>20</td>
                           <td>Av 16 de Septiembre No.98 Col. Bonfil</td>
                           <td>RGLSHAJ199607803912</td>
-                          <td>Grupo Carso</td>
+                          <td id='demo'>2</td>
                           <td><strong><span class='glyphicon glyphicon-asterisk' style='color:green;'></span></strong></td>
                         </tr>
+                        <?php echo "
+                        <script>
+                            function myFunction() 
+                            {
+                                window.location='$ruta/panel/$user_get/user-'+document.getElementById('demo').innerHTML;
+                            }
+                        </script>
+                        " ?>
                         <tr>
                           <td>Guillermo Villgran</td>
                           <td>20</td>

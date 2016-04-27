@@ -7,7 +7,9 @@
             <span class='glyphicon glyphicon-trash log_sm_borrar'></span>&nbsp;&nbsp;&nbsp;
             <span class='glyphicon glyphicon-cog log_sm'></span>&nbsp;&nbsp;&nbsp;
             <span class='glyphicon glyphicon-cloud-download log_sm'></span>&nbsp;&nbsp;&nbsp;
-            <span class='glyphicon glyphicon-floppy-disk log_sm'></span>&nbsp;&nbsp;&nbsp;
+            <a href="#" value="enviar" id="btn-guardar" class='a_limpia'>
+              <span class='glyphicon glyphicon-floppy-disk log_sm'></span>&nbsp;&nbsp;&nbsp;
+            </a>
             <span class='glyphicon glyphicon-envelope log_sm'></span>&nbsp;&nbsp;&nbsp;
             <span class='glyphicon glyphicon-search log_sm'></span>			
 		<?php

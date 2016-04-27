@@ -61,15 +61,13 @@
                             <div class="form-bottom">
                                 <form role="form" action="entrar.php" method="post" class="login-form">
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-username">Username</label>
-                                        <input type="text" name="user" placeholder="Username..." class="form-username form-control" id="form-username">
+                                        <input type="text" name="user" placeholder="Nombre de usuario..." class="form-username form-control" id="form-username">
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-password">Password</label>
-                                        <input type="password" name="pass" placeholder="Password..." class="form-password form-control" id="form-password">
+                                        <input type="password" name="pass" placeholder="Contraseña" class="form-password form-control" id="form-password">
                                     </div>
                                     <?php echo $toquen; ?>
-                                    <button type="submit" class="btn" style=''>Sign in!</button>
+                                    <button type="submit" class="btn" style=''>Ingresar</button>
                                 </form>
                             </div>
                         </div>

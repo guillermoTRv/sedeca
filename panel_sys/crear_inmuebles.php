@@ -1,43 +1,57 @@
 <div style='border:2px solid #e06000;margin-bottom:20px;'>
-	<form>
+	<form id="crear_inmueble" method="post" enctype="multipart/form-data">
 	<div class="row" style='padding:10px;'>
 		<br>
 		<div class="col-md-8 espacio_input">
 			<p class='text_label'>Nombre del inmueble</p>
-			<input type='text' class='form-control input-sm_user' placeholder='name_inm'>
+			<input type='text' class='form-control input-sm_user' name='name_txt'>
+		</div>
+
+		<div class="col-md-4 espacio_input">
+			<p class='text_label'>Cliente</p>
+			<select class='form-control select-sm_user' style='margin-top:-0px;' name='cliente_slc'>
+				<option value=''>--</option>
+				<option value='Senasica'>Senasica</option>
+				<option value='Cobach'>Cobach</option>
+				<option value='Caev'>Caev</option>
+			</select>
 		</div>
 	</div>
 
-	<div class="row" style='padding:10px;'>
+	<div class="row" style='padding:10px;margin-top:20px;'>
 		<div class="col-md-4 espacio_input">
 			<p class='text_label'>Calle</p>
-			<input type='text' class='form-control input-sm_user' placeholder='calle'>
+			<input type='text' class='form-control input-sm_user' name='calle'>
 		</div>
 
 		<div class="col-md-3 espacio_input">
 			<p style='text-align:center;' class='text_label'>Num-Interior</p>
-			<input type='text' class='form-control input-sm_user' placeholder='num_int'>
+			<input type='text' class='form-control input-sm_user' name='num_int'>
 		</div>
 
 		<div class="col-md-3 espacio_input">
 			<p style='text-align:center;' class='text_label'>Num-Exterior</p>
-			<input type='text' class='form-control input-sm_user' placeholder='num_ext'>
+			<input type='text' class='form-control input-sm_user' name='num_ext'>
 		</div>
 
 		<div class="col-md-2 espacio_input">
 			<p style='text-align:center;' class='text_label'>Codigo Postal</p>
-			<input type='text' class='form-control input-sm_user' placeholder='postal'>
+			<input type='text' class='form-control input-sm_user' name='postal'>
 		</div>
 	</div>
 
 	<div class="row" style='padding:10px;'>
 		<div class="col-md-4 espacio_input">
 			<p class='text_label'>Colonia</p>
-			<select class='form-control select-sm_user' style='margin-top:-0px;' name='colonia_slc'>
-				<option>--</option>
-			</select>
+			<input type='text' class='form-control input-sm_user' name='colonia'>
 		</div>
 
+		<div class="col-md-4 espacio_input">
+			<p class='text_label'>Entidad Federativa</p>
+			<select class='form-control select-sm_user' style='margin-top:-0px;' name='entidad_slc'>
+				<option ></option>
+			</select>
+		</div>
 
 		<div class="col-md-4 espacio_input">
 			<p class='text_label'>Delegacion/municipio</p>
@@ -46,13 +60,6 @@
 			</select>
 		</div>
 
-
-		<div class="col-md-4 espacio_input">
-			<p class='text_label'>Entidad Federativa</p>
-			<select class='form-control select-sm_user' style='margin-top:-0px;' name='entidad_slc'>
-				<option>--</option>
-			</select>
-		</div>
 	</div>
 
 	<div  class="row" style='margin-top:20px;padding:10px;'>
@@ -64,12 +71,12 @@
 				</center>
 				<div class="row">
 					<div class="col-md-6 espacio_input">
-						<select class='form-control select-sm_user' style='margin-top:-0px;' name='entidad_slc'>
+						<select class='form-control select-sm_user' style='margin-top:-0px;' name=''>
 							<option>--</option>
 						</select>
 					</div>
 					<div class="col-md-6 espacio_input">
-						<select class='form-control select-sm_user' style='margin-top:-0px;' name='entidad_slc'>
+						<select class='form-control select-sm_user' style='margin-top:-0px;' name=''>
 							<option>--</option>
 						</select>
 					</div>
@@ -106,5 +113,9 @@
 		</div>
 
 	</div>
+
   </form>
+</div>
+<div id="m_v">
+
 </div>

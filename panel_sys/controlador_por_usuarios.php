@@ -1,16 +1,27 @@
 <?php
 	if ($type_user=='administrador') {
 			switch ($nav) {
-                    case 'usuarios':
-                        include("panel_sys/listado_personal.php"); 
+                    case 'guardias':
+                        include("panel_sys/listados/listado_guardias.php"); 
+                    break;
+
+                    case 'supervisores':
+                        include("panel_sys/listados/listado_supervisores.php"); 
+                    break;
+
+                    case 'clientes':
+                        include("panel_sys/listados/listado_clientes.php"); 
                     break;
 
                     case 'crear':
                         include("panel_sys/crear_usuarios.php"); 
                     break;
 
+
+
+
                     case 'inmuebles':
-                        include("panel_sys/listado_inmuebles.php"); 
+                        include("panel_sys/listados/listado_inmuebles.php"); 
                       break;
 
                     case 'crear_inmueble':

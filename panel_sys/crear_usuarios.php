@@ -4,7 +4,6 @@
 			<ul class="nav nav-tabs" role="tablist">
 			    <li role="presentation"><a class='tab_a' href="#home" aria-controls="home" role="tab" data-toggle="tab">Datos usuarios</a></li>
 			    <li role="presentation"><a class='tab_a' href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Datos del servicio</a></li>
-			    <li role="presentation"><a class='tab_a' href="#ejercicio" aria-controls="ejercicio" role="tab" data-toggle="tab">Mensajes</a></li>
 			</ul>
 		</div>
 	</div>
@@ -16,9 +15,6 @@
 	    		</div>
 			    <div role="tabpanel" class="tab-pane" id="profile">
 			    	<?php include("panel_sys/crear_user/formulario_crear2.php"); ?>
-			    </div>
-			    <div role="tabpanel" class="tab-pane" id="ejercicio">
-	 				<?php include("panel_sys/crear_user/mensajes_crear.php"); ?>
 			    </div>
 	  		</div>
 		</div>

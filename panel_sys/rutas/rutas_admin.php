@@ -1,6 +1,6 @@
   
 
-    <a href="<?php echo "$ruta/panel/$user_get/usuarios" ?>">
+    <a href="<?php echo "$ruta/panel/$user_get/guardias" ?>">
       <span class='glyphicon glyphicon-user icon_izq' style='color:#6E6E6E;'></span>
     </a>
   
