@@ -36,20 +36,25 @@
                     break;
 
 
-                    case 'check':
-                        include("panel_sys/check.php"); 
+                    case 'check-interno':
+                        include("panel_sys/listados/listado_check.php"); 
                       break;
 
                     case 'servicios':
                         include("panel_sys/servicios.php"); 
                       break;
 
-                    case 'reportes':
+                    case 'reportes-normales':
                         include("panel_sys/reportes.php"); 
                       break;
                      
     		}	
 	}
+
+  if (isset($user_nav)) {
+            include("panel_sys/editar_usuario.php");
+  }
+
 	if ($type_user=='supervisor') {
       switch ($nav) {
               			case 'asistencia':

@@ -47,7 +47,7 @@
                                               <script>
                                                   function myFunction$id_usuario() 
                                                   {
-                                                      window.location='$ruta/panel/$user_get/user-'+document.getElementById('$id_usuario').innerHTML;
+                                                      window.location='$ruta/panel/$user_get/personal-User-'+document.getElementById('$id_usuario').innerHTML;
                                                   }
                                               </script>
                                               "; ?>

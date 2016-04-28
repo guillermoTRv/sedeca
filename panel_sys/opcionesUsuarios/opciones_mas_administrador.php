@@ -17,8 +17,6 @@
 	    }
 		
 		
-
-
 		?>
 		<a class='a_limpia' <?php echo "$complementoMas" ?>>
               <span class='glyphicon glyphicon-plus log_sm_mas'></span>&nbsp;&nbsp;&nbsp;

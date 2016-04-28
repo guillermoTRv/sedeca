@@ -19,6 +19,12 @@
    #podriamos hacer un control de url que solo permita ciertas url y en caso de que no reconozca algun redirgir a una pagina
    $personal_substr = substr($nav,0,8);
    $inmuebles_substr = substr($nav, 0,9);
+   $check_substr    = substr($nav,0,5);
+   $servicios_substr  = substr($nav,0,9);
+   $reportes_substr = substr($nav,0,8);
+
+   $user_substr     = substr($nav,9,4);
+
 
    if ($personal_substr == "personal") {
        $personal_nav    =  "personal";
@@ -30,6 +36,25 @@
        global $ruta_select;
        $ruta_select     =  "inmuebles";
    }
+   if ($user_substr == "User") {
+       $user_nav    =  "User";
+       $ruta_select =  "personal";
+   }
+
+   if ($check_substr== "check") {
+       $check_nav = "check";
+       $ruta_select = "check";
+   }
+   if ($servicios_substr=="servicios") {
+       $servicios_nav = "servicios";
+       $ruta_select = "servicios";
+   }
+   if ($reportes_substr == "reportes") {
+       $reportes_nav =  "reportes";
+       $ruta_select  =  "reportes";
+   }
+
+
 ?>
 
 <!DOCTYPE html>

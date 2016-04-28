@@ -39,7 +39,7 @@
                 <br>
                 <div class="col-md-10 col-md-offset-1 div_clientes">
                     <div class="col-md-4 col-md-offset-1">
-                        <a style='width:170px;' href='<?php echo $ruta ?>/panel/senasica/guardias'class='btn btn-sm btn-ind'>
+                        <a style='width:170px;' href='<?php echo $ruta ?>/panel/senasica/personal-guardias'class='btn btn-sm btn-ind'>
                             Senasica 
                         </a>
                         <a disabled style='width:170px;' href='?op=listado'class='btn btn-sm btn-ind'>
