@@ -1,18 +1,19 @@
   <?php 
       $color_icon = "#A4A4A4";
-      if ($nav=="guardias") {
+      if (isset($personal_nav)){
           $color_guardia = $color_icon;
       }
-      if ($nav=="inmuebles") {
+
+      if (isset($inmuebles_nav)) {
           $color_inm = $color_icon;
       }
   ?>  
 
-  <a href="<?php echo "$ruta/panel/$user_get/guardias" ?>">
+  <a href="<?php echo "$ruta/panel/$user_get/personal-guardias" ?>">
     <span class='glyphicon glyphicon-user icon_izq active' <?php echo "style='color:$color_guardia;'" ?>></span>
   </a>
   
-  <a href="<?php echo "$ruta/panel/$user_get/inmuebles" ?>">
+  <a href="<?php echo "$ruta/panel/$user_get/inmuebles_listado" ?>">
       <span class='glyphicon glyphicon-home icon_izq' <?php echo "style='color:$color_inm;'" ?>></span>
   </a>
   <a href="<?php echo "$ruta/panel/$user_get/check" ?>">

@@ -1,36 +1,37 @@
 <?php
 	if ($type_user=='administrador') {
 			switch ($nav) {
-                    case 'guardias':
+                    case 'personal-guardias':
                         include("panel_sys/listados/listado_guardias.php"); 
                     break;
 
-                    case 'supervisores':
+                    case 'personal-supervisores':
                         include("panel_sys/listados/listado_supervisores.php"); 
                     break;
 
-                    case 'clientes':
+                    case 'personal-clientes':
                         include("panel_sys/listados/listado_clientes.php"); 
                     break;
 
-                    case 'crear':
+                    case 'personal_crear':
                         include("panel_sys/crear_usuarios.php"); 
                     break;
 
-                    case 'baja_elementos':
+                    case 'personal_bajas':
                         include("panel_sys/eliminar_elementos/listadoGuardias_eliminar.php"); 
                     break;                    
 
 
 
-                    case 'inmuebles':
+                    case 'inmuebles_listado':
                         include("panel_sys/listados/listado_inmuebles.php"); 
                       break;
 
-                    case 'crear_inmueble':
+                    case 'inmuebles_crear':
                         include("panel_sys/crear_inmuebles.php"); 
                       break;
-                    case 'baja_inmuebles':
+                      
+                    case 'inmuebles_bajas':
                         include("panel_sys/eliminar_elementos/listadoInmuebles_eliminar.php"); 
                     break;
 

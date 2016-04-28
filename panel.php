@@ -17,7 +17,19 @@
    include("panel_sys/datos_encabezado.php");
    include("variables_get.php");
    #podriamos hacer un control de url que solo permita ciertas url y en caso de que no reconozca algun redirgir a una pagina
+   $personal_substr = substr($nav,0,8);
+   $inmuebles_substr = substr($nav, 0,9);
 
+   if ($personal_substr == "personal") {
+       $personal_nav    =  "personal";
+       global $ruta_select;  
+       $ruta_select     =  "personal";
+   }
+   if($inmuebles_substr == "inmuebles"){
+       $inmuebles_nav   =  "inmuebles";
+       global $ruta_select;
+       $ruta_select     =  "inmuebles";
+   }
 ?>
 
 <!DOCTYPE html>
@@ -61,13 +73,7 @@
               
               <div class="row barra_nav">
                 <div class="col-md-3">
-                    <form id="form_seccion" method='POST'>
-                        <select class="form-control select-sm_user" style='margin:0px;' id='consulta-lista-personal'>
-                            <option value='guardias' <?php if($nav=="guardias"){ echo " selected"; } ?>>Guardias</option>
-                            <option value='supervisores' <?php if($nav=="supervisores"){ echo " selected"; } ?>>Supervisores</option>
-                            <option value='clientes' <?php if($nav=="clientes"){ echo " selected"; } ?>>Clientes</option>
-                        </select>
-                    </form>
+                  <?php include("panel_sys/busquedas_select.php"); ?>
                 </div>
                 <div class="col-md-4">
                   <?php include("panel_sys/opcionesUsuarios/principalOpciones_usuarios.php"); ?>
@@ -108,7 +114,7 @@
         var lista= document.getElementById('consulta-lista-personal');
         lista.onchange = function()
         {
-          window.location='$ruta/panel/$user_get/'+lista.value;
+          window.location='$ruta/panel/$user_get/$ruta_select-'+lista.value;
         };
       }
     </script>";

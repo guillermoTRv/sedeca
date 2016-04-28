@@ -1,6 +1,6 @@
 <?php 
       $popover     = "rel='popover' data-container='body' data-toggle='popover' data-placement='top'";
-      $opcion_none = "data-content='Esta opcion esta inhabilidada en esta sección'";
+      $opcion_none = "data-content='Esta opción esta inhabilidada en esta sección'";
 
       if ($type_user == "administrador") {
             include("panel_sys/opcionesUsuarios/opciones_administrador.php");
