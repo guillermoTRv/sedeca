@@ -16,16 +16,6 @@
    $name_user       =  $_SESSION['name_user'];
    include("panel_sys/datos_encabezado.php");
    include("variables_get.php");
-
-
-
-   if ($nav == "guardias" or $nav == "supervisores" or $nav == "clientes" or $nav == "crear") {
-        $ruta_agregar = "crear";
-   }
-   if ($nav == "inmuebles" or $nav == "crear_inmueble") {
-        $ruta_agregar = "crear_inmueble"; 
-   }
-
    #podriamos hacer un control de url que solo permita ciertas url y en caso de que no reconozca algun redirgir a una pagina
 
 ?>
@@ -42,16 +32,11 @@
     <link href="<?php echo $ruta ?>/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo $ruta ?>/css/css_panel.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
     <script src="<?php echo $ruta ?>/js/ajax.js"></script>
   </head>
   <body>
 
-    <style type="text/css">
-      .icon_izq{font-size: 3.4em;text-align: center;margin-left: 22px;margin-bottom:20px;margin-top:13px;color: black }
-      td{color:#F2F2F2;}
-
-    </style>
     <div class="container">
       <div class="row">
         <div class="col-md-12 contendedor_div">
@@ -85,7 +70,7 @@
                     </form>
                 </div>
                 <div class="col-md-4">
-                  <?php include("panel_sys/opciones_por_usuario.php"); ?>
+                  <?php include("panel_sys/opcionesUsuarios/principalOpciones_usuarios.php"); ?>
                     
                 </div>
                 <div class="col-md-3 col-md-offset-2 pull-right">

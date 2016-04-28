@@ -17,6 +17,9 @@
                         include("panel_sys/crear_usuarios.php"); 
                     break;
 
+                    case 'baja_elementos':
+                        include("panel_sys/eliminar_elementos/listadoGuardias_eliminar.php"); 
+                    break;                    
 
 
 
@@ -27,6 +30,10 @@
                     case 'crear_inmueble':
                         include("panel_sys/crear_inmuebles.php"); 
                       break;
+                    case 'baja_inmuebles':
+                        include("panel_sys/eliminar_elementos/listadoInmuebles_eliminar.php"); 
+                    break;
+
 
                     case 'check':
                         include("panel_sys/check.php"); 

@@ -1,0 +1,1 @@
+Aqui estara habilitada la vista para que se eliminen guardias
