@@ -51,7 +51,6 @@
                         <div class="col-sm-6 col-sm-offset-3 form-box">
                             <div class="form-top">
                                 <div class="form-top-left">
-                                    <h3>Ingrese a su respectiva area</h3>
                                     <p>Teclee su nombre de usuario con su contraseña</p>
                                 </div>
                                 <div class="form-top-right">

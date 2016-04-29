@@ -1,10 +1,20 @@
-		<div style='border:2px solid #e06000;margin-bottom:20px;'>	
-				   <div class="row" style='background-color:rgba(0, 0, 0, .4);margin-left:1px;margin-right:1px;margin-top:1px;padding-left:12px;border-bottom:1px solid #e06000;'>
-                     <center>
-                     	<h3 style='margin-bottom:20px;margin-top:20px;margin-left:-14px;color:#f2f2f2;'>Asistencias</h3>
-                     </center>
+<div style='border:2px solid #e06000;margin-bottom:20px;'>	
+            <div style='width:100%; background-color:black;border-radius:3px;padding:1px;border-bottom:1px solid white;'>
+                <div class="row">
+                  <div class="col-md-3 col-md-offset-2">
+                      <h4 class='texto_principal'>
+                        Registro Entrada-Salida
+                      </h4>
+                  </div>
+                  <div class="col-md-4">
+                    <select class='form-control select-sm_user' style='margin-top:10px;'>
+                      <option>Seleccionar Inmueble</option>
+                      <option>Estoy en el inmueble 1</option>
+                    </select>
+                  </div>
+      
+                </div>
             </div>
- 
                    <div class="row" style='margin-top:70px;'>
                        <div class="col-md-5 col-md-offset-2">
                          <a style='width:170px;font-size:1.2em;' class='btn btn-sm btn-ind'> Registrar entrada </a>
@@ -13,7 +23,7 @@
                          <a style='width:170px;font-size:1.2em;' class='btn btn-sm btn-ind disabled'> Registrar salida </a>
                        </div>
                    </div>
- 
+                    <!--
                    <div class="row">
                      <div class="col-md-6 col-md-offset-3">
                          <h3 class='mens_bienvenida' style='text-align:center;color:#f2f2f2;'>
@@ -21,7 +31,7 @@
                          </h3>
                      </div>
                    </div>
- 
+                    -->
 
                    <?php  
                     if ($type_user == "guardia") {

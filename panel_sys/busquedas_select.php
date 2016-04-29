@@ -1,4 +1,7 @@
 	<?php 
+	if ($type_user == "administrador") {
+	
+	
         if (isset($personal_nav)){
 			?>
 				<select class="form-control select-sm_user" style='margin:0px;' id='consulta-lista-personal'>
@@ -44,7 +47,18 @@
 			   	</select>
             <?php 
         }
+    }
 
+    if ($type_user=="supervisor") {
+    	if ($nav == "personal") {
+    		?>
+            	<select class="form-control select-sm_user" style='margin:0px;'  id='consulta-lista-personal'>
+			      	 <option value='normales'>Senasica-Anzures</option>
+			      	 <option value='extraordinarios'>Cobach-Bachilleres-1</option>
+			   	</select>
+            <?php 
+    	}
+    }
 	?>
 
    

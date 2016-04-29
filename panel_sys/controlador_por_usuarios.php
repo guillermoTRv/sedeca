@@ -40,12 +40,22 @@
                         include("panel_sys/listados/listado_check.php"); 
                       break;
 
+                    case 'check-externo':
+                        include("panel_sys/listados/listado_check.php"); 
+                      break;
+
+
+
                     case 'servicios':
                         include("panel_sys/servicios.php"); 
                       break;
 
                     case 'reportes-normales':
                         include("panel_sys/reportes.php"); 
+                      break;
+
+                    case 'reportes-extraordinarios':
+                        include("panel_sys/reportes_extraordinarios.php"); 
                       break;
                      
     		}	
@@ -58,7 +68,7 @@
 	if ($type_user=='supervisor') {
       switch ($nav) {
               			case 'asistencia':
-              					include("panel_sys/registro_es.php");
+              					include("panel_sys/registro_es_supervisor.php");
               			break;
               				
                     case 'personal':
@@ -66,11 +76,9 @@
               			break;
               				
                     case 'servicios':
-                        include("panel_sys/servicios.php"); 
                     break;
                       
                     case 'reportes':
-                        include("panel_sys/reportes.php"); 
                     break;
 			}
 	}

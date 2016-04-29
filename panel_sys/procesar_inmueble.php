@@ -42,10 +42,11 @@
 			 				   	entidad,
 			 				   	demarcacion,
 			 				   	zona,
+			 				   	supervisor,
 			 				   	fecha_registro_inmueble,
 			 				   	fecha_mod_inmueble,
 			 				   	estado_repo)
-			 				   VALUES('$name_inmueble','$cliente','$calle','$colonia','$num_ext','$num_int','$postal','Ciudad de México','Atizapan','Poniente Norte','$fecha','$fecha','no')";
+			 				   VALUES('$name_inmueble','$cliente','$calle','$colonia','$num_ext','$num_int','$postal','Ciudad de México','Atizapan','Poniente Norte','Aun no cuenta','$fecha','$fecha','no')";
 			 		$insert = mysqli_query($enlace,$insert) or die("que onda");
 			 		echo "Los datos fueron agregados correctamente";
 

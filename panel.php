@@ -14,7 +14,6 @@
    session_start();
    $type_user       =  $_SESSION['type_user'];
    $name_user       =  $_SESSION['name_user'];
-   include("panel_sys/datos_encabezado.php");
    include("variables_get.php");
    #podriamos hacer un control de url que solo permita ciertas url y en caso de que no reconozca algun redirgir a una pagina
    $personal_substr = substr($nav,0,8);
@@ -24,7 +23,8 @@
    $reportes_substr = substr($nav,0,8);
 
    $user_substr     = substr($nav,9,4);
-
+   $idUser_nav      = substr($nav,14,5);
+   
 
    if ($personal_substr == "personal") {
        $personal_nav    =  "personal";
@@ -54,7 +54,7 @@
        $ruta_select  =  "reportes";
    }
 
-
+   include("panel_sys/datos_encabezado.php");
 ?>
 
 <!DOCTYPE html>

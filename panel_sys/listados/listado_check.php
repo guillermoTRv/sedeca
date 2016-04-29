@@ -6,7 +6,10 @@
                           <th style='color:white;font-size:1.1em;'>Status</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <?php 
+                      if ($nav == "check-interno") {
+                        ?>  
+                          <tbody>
                         <tr>
                           <td>Accesos</td>
                           <td>Graffiti</td>
@@ -42,5 +45,23 @@
                           <td>Sin novedad</td>
                           <td>Activo</td>
                         </tr>
-                    </tbody>
+                          </tbody>
+                        <?php
+                      }
+                      if ($nav == "check-externo") {
+                        ?>  
+                          <tbody>
+                            <tr>
+                              <td>Datos</td>
+                              <td>Check</td>
+                              <td>Externos</td>
+                            </tr>
+
+                          </tbody>
+                        <?php
+                      }
+
+                    ?>
+                    
+
 </table>
