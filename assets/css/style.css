@@ -6,7 +6,7 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
-    background-color:#E6E6E6;
+    background-image:url("http://localhost/work/assets/css/image_empresa.jpg");
 }
 
 strong { font-weight: 500; }

@@ -10,20 +10,20 @@
 
    $user_get  = sanitizar($_GET['us']);
    $nav       = sanitizar($_GET['nav']);
-
+   
    session_start();
    $type_user       =  $_SESSION['type_user'];
    $name_user       =  $_SESSION['name_user'];
    include("variables_get.php");
    #podriamos hacer un control de url que solo permita ciertas url y en caso de que no reconozca algun redirgir a una pagina
-   $personal_substr = substr($nav,0,8);
-   $inmuebles_substr = substr($nav, 0,9);
-   $check_substr    = substr($nav,0,5);
-   $servicios_substr  = substr($nav,0,9);
-   $reportes_substr = substr($nav,0,8);
+   $personal_substr    = substr($nav,0,8);
+   $inmuebles_substr   = substr($nav, 0,9);
+   $check_substr       = substr($nav,0,5);
+   $servicios_substr   = substr($nav,0,9);
+   $reportes_substr    = substr($nav,0,8);
 
-   $user_substr     = substr($nav,9,4);
-   $idUser_nav      = substr($nav,14,5);
+   $user_substr        = substr($nav,9,4);
+   $idUser_nav         = substr($nav,14,5);
    
 
    if ($personal_substr == "personal") {

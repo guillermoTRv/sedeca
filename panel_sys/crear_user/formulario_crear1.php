@@ -1,4 +1,4 @@
-<form method='post' enctype='multipart/form-data'>
+<form id="alta_usuario" method="post" enctype="multipart/form-data">
 	<div class="row" style='padding:10px;'>
 		<br>
 		<div class="col-md-4 espacio_input">
@@ -11,7 +11,7 @@
 		</div>
 		<div class="col-md-4 espacio_input">
 			<p class='text_label'>Apellido materno</p>
-			<input type='text' class='form-control input-sm_user' placeholder='apell_dos'>
+			<input type='text' class='form-control input-sm_user' name='apell_dos'>
 		</div>
 
 	</div>
@@ -21,7 +21,7 @@
 			<div class="row">
 				<div class="col-md-6 espacio_input">
 					<p class='text_label'>Fecha de nacimiento</p>
-					<input type='date' class='form-control input-sm_user' name='nacimiento-date'>
+					<input type='date' class='form-control input-sm_user' name='nacimiento_date'>
 				</div>
 				<div class="col-md-6 espacio_input">
 					<p class='text_label'>Curp</p>
@@ -36,7 +36,7 @@
 				</div>
 				<div class="col-md-6 espacio_input">
 					<p class='text_label'>Password</p>
-					<input type='password' class='form-control input-sm_user' placeholder='pass_txt'>
+					<input type='password' class='form-control input-sm_user' name='pass_txt'>
 				</div>
 			</div>
 			
@@ -74,22 +74,27 @@
 		</div>
 		<div class="col-md-4 espacio_input">
 			<p class="text_label">C.P</p>
-			<input type='text' class='form-control input-sm_user' name='curp'>
+			<input type='text' class='form-control input-sm_user' name='postal'>
 		</div>
 		<div class="col-md-4 espacio_input">
 			<select class='form-control select-sm_user' name='entidad_slc'>
-				<option style='font-size:.7em;'>Entidad Federativa</option>
+				<option value=''>Entidad Federativa</option>
+				<option value='Estado de Mexico'>Estado de México</option>
+				<option value='Ciudad de Mexico'>Ciudad de México</option>
 			</select>
 		</div>
 	</div>
 	<div class="row" style='margin-top:10px;padding:10px;'>
 		<div class="col-md-4 espacio_input">
-			<select class='form-control select-sm_user' name='estancia_slc'>
-				<option>Municipio o Delegacion</option>
+			<select class='form-control select-sm_user' name='demarcacion_slc'>
+				<option value=''>Municipio o Delegacion</option>
+				<option value='Atizapan de Zaragoza'>Atizapan de Zaragoza</option>
+				<option value='Alvaro Obregon'>Alvaro Obregon</option>
 			</select>
 		</div>
 		<div class="col-md-4 espacio_input">
 			<p class='text_label'>Mobil</p>
-			<input type='text' class='form-control input-sm_user' name='num_mobil'>
+			<input type='text' class='form-control input-sm_user' name='mobil'>
 		</div>
 	</div>
+	<?php echo $toquen; ?>

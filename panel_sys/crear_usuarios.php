@@ -16,6 +16,9 @@
 			    <div role="tabpanel" class="tab-pane" id="profile">
 			    	<?php include("panel_sys/crear_user/formulario_crear2.php"); ?>
 			    </div>
+			    <div id="m_v">
+				</div>	
+
 	  		</div>
 		</div>
 	</div>

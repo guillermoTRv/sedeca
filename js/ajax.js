@@ -1,10 +1,27 @@
         $(function(){
-                $("#btn-guardar").click(function(){
+                $("#btn-alta-inmueble").click(function(){
                     var url="../../panel_sys/procesar_inmueble.php";
                     $.ajax({
                         type:"POST",
                         url:url,
                         data:$("#crear_inmueble").serialize(),
+
+                        success:function(data){
+                            $("#m_v").html(data);                
+                        }
+
+                    });
+                    return false;
+                });
+            });
+
+        $(function(){
+                $("#btn-alta-user").click(function(){
+                    var url="../../panel_sys/crear_user/procesar_formulario.php";
+                    $.ajax({
+                        type:"POST",
+                        url:url,
+                        data:$("#alta_usuario").serialize(),
 
                         success:function(data){
                             $("#m_v").html(data);                
