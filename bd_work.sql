@@ -70,3 +70,9 @@ CREATE TABLE registro_system(
 	primary key(id_reg_sys)
 )
 
+CREATE TABLE clientes(
+	id_cliente INT NOT NULL AUTO_INCREMENT,
+	name_cliente varchar(30) NOT NULL, 
+	name_get varchar(30) NOT NULL,
+	primary key(id_cliente)
+)ENGINE=MyISAM DEFAULT CHARSET=Latin1;

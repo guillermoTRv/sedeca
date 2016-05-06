@@ -9,10 +9,10 @@
                     </thead>
                     <tbody>
                       <?php 
-                        $inmuebles_c = "SELECT id_inmueble,name_inmueble,calle,colonia,num_exterior,num_interior,demarcacion,supervisor,estado_repo FROM inmuebles ORDER BY id_inmueble DESC";
+                        $inmuebles_c = "SELECT id_inmueble,name_inmueble,calle,colonia,num_exterior,num_interior,demarcacion,supervisor,estado_repo FROM inmuebles WHERE empresa='$getEmpresa' ORDER BY id_inmueble DESC";
                         $inmuebles_e = mysqli_query($enlace,$inmuebles_c);
                         while ($array = mysqli_fetch_array($inmuebles_e)) {
-                               
+                              $id_inmueble   = $array['id_inmueble']; 
                               $nombre        = $array['name_inmueble'];
                               $calle         = $array['calle'];
                               $colonia       = $array['colonia'];
@@ -26,14 +26,29 @@
                               $supervisor    = $array['supervisor'];
                               if ($estado_repo == 'si') {global $color; $color = 'green';}
                               if ($estado_repo == 'no') {global $color; $color = '#DF0101';}
+                                
+                              ?>
+                              <tr <?php echo "ondblclick='myFunction$id_inmueble()'"; ?>>
+                                <td><?php echo $nombre ?></td>
+                                <td><?php echo $calle."&nbsp;".$num_exterior."&nbsp;".$colonia."&nbsp;".$demarcacion ?></td>
+                                <td><?php echo $supervisor ?></td>
+                                <td>
+                                  <strong>
+                                          <?php echo "<span class='glyphicon glyphicon-asterisk' style='color:$color;'><span id='$id_inmueble'style='font-size:.1em;color:rgba(0,0,0,0);'>$id_inmueble</span></span>"; ?>
+                                  </strong>
+                                </td>
+                              </tr>
+
+                              <?php
                               echo "
-                                <tr>
-                                  <td>$nombre</td>
-                                  <td>$calle $num_exterior $colonia $demarcacion</td>
-                                  <td>$supervisor</td>
-                                  <td><strong><span class='glyphicon glyphicon-asterisk' style='color:$color;'></span></strong></td>
-                                </tr>
+                                  <script>
+                                      function myFunction$id_inmueble() 
+                                        {
+                                            window.location='$ruta/panel/$user_get/inmuebles-datos-'+document.getElementById('$id_inmueble').innerHTML;
+                                        }
+                                  </script>
                               ";
+              
                          } 
                       ?>
                     </tbody>

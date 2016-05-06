@@ -47,6 +47,15 @@
 			   	</select>
             <?php 
         }
+
+        if (isset($cambioVar)) {
+            ?>
+                <select class="form-control select-sm_user" style='margin:0px;'  id='consulta-lista-personal'>
+                     <option>--</option>
+                     <option <?php echo "value='User-$varUser'" ?>  value='User'>Regresar a opciones de edición</option>
+                </select>
+            <?php 
+        }
     }
 
     if ($type_user=="supervisor") {

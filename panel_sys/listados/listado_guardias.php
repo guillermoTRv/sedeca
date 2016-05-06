@@ -5,14 +5,14 @@
                           <th style='color:white;'>Nombre</th>
                           <th style='color:white;'>Edad</th>
                           <th style='color:white;'>Domicilio</th>
-                          <th style='color:white;'>Curp</th>
+                          <th style='color:white;'>Horario</th>
                           <th style='color:white;'>Inmueble</th>
                           <th style='color:white;'>#</th>
                         </tr>
                     </thead>
                     <tbody>
                       <?php 
-                        $consultaGuardias         = "SELECT id_usuario,nombre_g,apellido_p,apellido_m,calle,colonia,num_exterior,demarcacion,horario_laboral,inmueble_asign,estado_repo FROM  usuarios_datos_basicos ORDER BY id_usuario ASC";
+                        $consultaGuardias         = "SELECT id_usuario,nombre_g,apellido_p,apellido_m,calle,colonia,num_exterior,demarcacion,horario_laboral,inmueble_asign,estado_repo FROM  usuarios_datos_basicos WHERE empresa='$getEmpresa' ORDER BY id_usuario ASC";
                         $consultaGuardiasEjecutar = mysqli_query($enlace,$consultaGuardias) or die("No mames");
                         while ($consultaArray = mysqli_fetch_array($consultaGuardiasEjecutar)) {
                                 $id_usuario   = $consultaArray['id_usuario'];

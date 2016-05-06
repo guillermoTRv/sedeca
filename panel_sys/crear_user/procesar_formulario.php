@@ -10,37 +10,38 @@
 	if ($type_user == 'administrador') {
 			
 		if ($controller == 0) {
+					    $empresa           =   sanitizar($_POST['empresa']);
 			
-		
-			echo "<br>".$name_txt          =   sanitizar($_POST['name_txt']);
-			echo "<br>".$apell_uno         =   sanitizar($_POST['apell_uno']);
-			echo "<br>".$apell_dos		   =   sanitizar($_POST['apell_dos']);	
-			echo "<br>".$nacimiento_date   =   sanitizar($_POST['nacimiento_date']);
-			echo "<br>".$curp_txt          =   sanitizar($_POST['curp_txt']); 
-			echo "<br>".$usuario_txt       =   sanitizar($_POST['usuario_txt']);       
+			$name_txt          =   sanitizar($_POST['name_txt']);
+			$apell_uno         =   sanitizar($_POST['apell_uno']);
+			$apell_dos		   =   sanitizar($_POST['apell_dos']);	
+			$nacimiento_date   =   sanitizar($_POST['nacimiento_date']);
+			$curp_txt          =   sanitizar($_POST['curp_txt']); 
+			$usuario_txt       =   sanitizar($_POST['usuario_txt']);       
 			
-			echo "<br>".$pass_txt          =   sanitizar($_POST['pass_txt']);
-			echo "<br>".$calle_txt         =   sanitizar($_POST['calle_txt']);
-			echo "<br>".$num_ext           =   sanitizar($_POST['num_ext']);
-			echo "<br>".$num_int           =   sanitizar($_POST['num_int']);
-			echo "<br>".$colonia           =   sanitizar($_POST['colonia']);
-			echo "<br>".$postal            =   sanitizar($_POST['postal']);
-			echo "<br>".$entidad_slc       =   sanitizar($_POST['entidad_slc']);
+			$pass_txt          =   sanitizar($_POST['pass_txt']);
+			$calle_txt         =   sanitizar($_POST['calle_txt']);
+			$num_ext           =   sanitizar($_POST['num_ext']);
+			$num_int           =   sanitizar($_POST['num_int']);
+			$colonia           =   sanitizar($_POST['colonia']);
+			$postal            =   sanitizar($_POST['postal']);
+			$entidad_slc       =   sanitizar($_POST['entidad_slc']);
 			
-			echo "<br>".$demarcacion       =   sanitizar($_POST['demarcacion_slc']);
-			echo "<br>".$num_mobil         =   sanitizar($_POST['mobil']);
-			echo "<br>".$inmueble_slc      =   sanitizar($_POST['inmueble_slc']);
-			echo "<br>".$supervisor        =   sanitizar($_POST['supervisor']);
-			echo "<br>".$costo             =   sanitizar($_POST['costo']);
-			echo "<br>".$turno             =   sanitizar($_POST['turno']);
-			echo "<br>".$hora_1            =   sanitizar($_POST['hora_1']);
-			echo "<br>".$hora_2            =   sanitizar($_POST['hora_2']);
-			echo "<br>".$type_pago         =   sanitizar($_POST['type_pago']);
-			echo "<br>".$inicio_contr      =   sanitizar($_POST['inicio_contrato']);		
-			echo "<br>".$final_contr       =   sanitizar($_POST['finalizacion_contrato']);	 
+			$demarcacion       =   sanitizar($_POST['demarcacion_slc']);
+			$num_mobil         =   sanitizar($_POST['mobil']);
+			$inmueble_slc      =   sanitizar($_POST['inmueble_slc']);
+			$supervisor        =   sanitizar($_POST['supervisor']);
+			$costo             =   sanitizar($_POST['costo']);
+			$turno             =   sanitizar($_POST['turno']);
+			$hora_1            =   sanitizar($_POST['hora_1']);
+			$hora_2            =   sanitizar($_POST['hora_2']);
+			$type_pago         =   sanitizar($_POST['type_pago']);
+			$inicio_contr      =   sanitizar($_POST['inicio_contrato']);		
+			$final_contr       =   sanitizar($_POST['finalizacion_contrato']);	 
 
 
-			if ($name_txt        !='' and 
+			if ($empresa         !='' and
+				$name_txt        !='' and 
 				$apell_uno       !='' and 
 				$apell_dos       !='' and 
 				$nacimiento_date !='' and 
@@ -70,11 +71,11 @@
 				
 
 				if (preg_match("/^[A-Z]{1}[AEIOU]{1}[A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM]{1}(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[0-9A-Z]{1}[0-9]{1}$/", $curp_txt)) {
-					$varController = 1;
+					$controllerUser = 1;
 				}
 				else{$controllerUser = 0; echo "Ingrese un curp valido";}
 
-				if ($controllerUser = 1) {
+				if ($controllerUser == 1) {
 					$validacionConsulta = "SELECT * FROM usuarios_datos_basicos WHERE 
 					nombre_g           = '$name_txt' and
 					apellido_p		   = '$apell_uno' and
@@ -97,7 +98,8 @@
 					turno              = '$turno' and 
 					tipo_pago          = '$type_pago' and 
 					fecha_inicio_contrato  =  '$inicio_contr' and
-					fecha_finalizacion     =  '$final_contr'
+					fecha_finalizacion     =  '$final_contr' and
+					empresa                =  '$empresa'
 					";
 
 					$validacionEjecutar = mysqli_query($enlace,$validacionConsulta);  
@@ -108,7 +110,7 @@
 						$controllerUser = 1;
 					}
 					else{
-						$controllerUser = 0; echo "Los datos ya se habian insertado";
+						$controllerUser = 0; echo "<p class='texto_principal'>Los datos ya se habian insertado</p>";
 					}
 
 				}
@@ -154,7 +156,10 @@
 							 fecha_inicio_contrato,
 							 fecha_finalizacion,
 							 fecha_registro_bd,
-							 estado_repo
+							 estado_repo,
+							 puesto,
+							 empresa
+
 							 ) VALUES(
 							 '$name_txt',
 							 '$apell_uno',
@@ -181,7 +186,10 @@
 							 '$inicio_contr',
 							 '$final_contr',
 							 '$fecha',
-							 'no')";
+							 'no',
+							 'guardia',
+							 '$empresa'
+							 )";
 							$insertarDatosEjec = mysqli_query($enlace,$insertarDatos) or die("que onda");
 
 							/*
@@ -214,10 +222,10 @@
 
 							*/
 
-							ECHO "insertar datos";
+							ECHO "<p class='texto_principal'>El nuevo usuario fue creado exitosamente</p>";
 						}
 						else{
-							echo "Ese usuario ya estaba registrado"; 
+							echo "<p class='texto_principal'>Ese usuario ya estaba registrado</p>"; 
 						}
 	
 				}
@@ -228,18 +236,18 @@
 
 			}
 			else{
-				echo "No llenaste todos los datos del formulario";
+				echo "<p class='texto_principal'>No llenaste todos los datos del formulario</p>";
 			}
 
 
 		}
 		else{
 
-			echo "Error al cargar los datos";
+			echo "<p class='texto_principal'>Error al cargar los datos</p>";
 		}
 	} 
 	else{
-		echo "Error";
+		echo "<p class='texto_principal'>Error</p>";
 	}
 	
 ?>

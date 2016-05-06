@@ -1,6 +1,7 @@
 <form id="alta_usuario" method="post" enctype="multipart/form-data">
 	<div class="row" style='padding:10px;'>
 		<br>
+		<?php echo "<input type='hidden' name='empresa' value='$getEmpresa'>" ?>
 		<div class="col-md-4 espacio_input">
 			<p class='text_label'>Nombres</p>
 			<input type='text' class='form-control input-sm_user' name='name_txt'>

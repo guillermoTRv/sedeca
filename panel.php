@@ -6,54 +6,13 @@
    include("time_fecha.php");
    include("notificacion_errores.php");
 
-   
-
-   $user_get  = sanitizar($_GET['us']);
-   $nav       = sanitizar($_GET['nav']);
-   
    session_start();
    $type_user       =  $_SESSION['type_user'];
    $name_user       =  $_SESSION['name_user'];
-   include("variables_get.php");
-   #podriamos hacer un control de url que solo permita ciertas url y en caso de que no reconozca algun redirgir a una pagina
-   $personal_substr    = substr($nav,0,8);
-   $inmuebles_substr   = substr($nav, 0,9);
-   $check_substr       = substr($nav,0,5);
-   $servicios_substr   = substr($nav,0,9);
-   $reportes_substr    = substr($nav,0,8);
-
-   $user_substr        = substr($nav,9,4);
-   $idUser_nav         = substr($nav,14,5);
    
+   include("panel_sys/get/principal_get.php");
 
-   if ($personal_substr == "personal") {
-       $personal_nav    =  "personal";
-       global $ruta_select;  
-       $ruta_select     =  "personal";
-   }
-   if($inmuebles_substr == "inmuebles"){
-       $inmuebles_nav   =  "inmuebles";
-       global $ruta_select;
-       $ruta_select     =  "inmuebles";
-   }
-   if ($user_substr == "User") {
-       $user_nav    =  "User";
-       $ruta_select =  "personal";
-   }
-
-   if ($check_substr== "check") {
-       $check_nav = "check";
-       $ruta_select = "check";
-   }
-   if ($servicios_substr=="servicios") {
-       $servicios_nav = "servicios";
-       $ruta_select = "servicios";
-   }
-   if ($reportes_substr == "reportes") {
-       $reportes_nav =  "reportes";
-       $ruta_select  =  "reportes";
-   }
-
+   #podriamos hacer un control de url que solo permita ciertas url y en caso de que no reconozca algun redirgir a una pagina   
    include("panel_sys/datos_encabezado.php");
 ?>
 
@@ -124,7 +83,7 @@
               </div>
               <div class="row div_pr">
                 <?php
-                    include("panel_sys/controlador_por_usuarios.php");  
+                    include("panel_sys/controlador_principal.php");  
                 ?>
               </div>
             </div>

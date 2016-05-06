@@ -1,6 +1,5 @@
-<?php
-	if ($type_user=='administrador') {
-			switch ($nav) {
+<?php 
+        switch ($nav) {
                     case 'personal-guardias':
                         include("panel_sys/listados/listado_guardias.php"); 
                     break;
@@ -58,41 +57,22 @@
                         include("panel_sys/reportes_extraordinarios.php"); 
                       break;
                      
-    		}	
-	}
+        } 
+  
 
-  if (isset($user_nav)) {
-            include("panel_sys/editar_usuario.php");
-  }
+        if (isset($user_nav)) {
+                  include("panel_sys/editar_usuario.php");
+        }
 
-	if ($type_user=='supervisor') {
-      switch ($nav) {
-              			case 'asistencia':
-              					include("panel_sys/registro_es_supervisor.php");
-              			break;
-              				
-                    case 'personal':
-              					include("panel_sys/listado_personal.php");
-              			break;
-              				
-                    case 'servicios':
-                    break;
-                      
-                    case 'reportes':
-                    break;
-			}
-	}
-	if ($type_user=='guardia') {
-		  switch ($nav) {
-				            case 'asistencia':
-						          include("panel_sys/registro_es.php");
-					          break;
-                    
-                    case 'reportes':
-                      include("panel_sys/reporte_guardia.php"); 
-                    break;
-			}
-	}
-
+        if (isset($cambioVar)) {
+                  include("panel_sys/controladores/admin/controlador_edicionUsuario.php");
+        }
+        if (isset($supervisor_nav)) {
+                  include("panel_sys/controladores/admin/controlador_edicionSupervisor.php");
+        }
+        if (isset($inmuebles_datos)) {
+                  include("panel_sys/inmuebles/edicion/principal_editarInmueble.php");
+        }
+        
 
 ?>
