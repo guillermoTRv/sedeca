@@ -12,7 +12,7 @@
                     </thead>
                     <tbody>
                       <?php 
-                        $consultaGuardias         = "SELECT id_usuario,nombre_g,apellido_p,apellido_m,calle,colonia,num_exterior,demarcacion,horario_laboral,inmueble_asign,estado_repo FROM  usuarios_datos_basicos WHERE empresa='$getEmpresa' ORDER BY id_usuario ASC";
+                        $consultaGuardias         = "SELECT id_usuario,nombre_g,apellido_p,apellido_m,calle,colonia,num_exterior,demarcacion,turno,inmueble_asign,estado_repo,edad FROM  usuarios_datos_basicos WHERE empresa='$getEmpresa' ORDER BY id_usuario ASC";
                         $consultaGuardiasEjecutar = mysqli_query($enlace,$consultaGuardias) or die("No mames");
                         while ($consultaArray = mysqli_fetch_array($consultaGuardiasEjecutar)) {
                                 $id_usuario   = $consultaArray['id_usuario'];
@@ -21,20 +21,21 @@
                                 $apellido_m   = $consultaArray['apellido_m'];
                                 $calle        = $consultaArray['calle'];
                                 $colonia      = $consultaArray['colonia'];
-                                $num_ext      = $consultaArray['num_ext'];
+                                $num_ext      = $consultaArray['num_exterior'];
                                 $demarcacion  = $consultaArray['demarcacion'];
-                                $horario      = $consultaArray['horario_laboral'];      
+                                $turno      = $consultaArray['turno'];      
                                 $inmueble     = $consultaArray['inmueble_asign'];
                                 $estado       = $consultaArray['estado_repo'];
+                                $edad         = $consultaArray['edad'];
                                   if ($estado == 'si') {global $color; $color = 'green';}
                                   if ($estado == 'no') {global $color; $color = '#DF0101';}
 
                                 ?>
                                     <tr style='margin-bottom:7px;' <?php echo "ondblclick='myFunction$id_usuario()'"; ?>>
                                       <td><?php echo "$nombre_g $apellido_p $apellido_m" ?></td>
-                                      <td><?php echo "20"; ?></td>
+                                      <td><?php echo "$edad"; ?></td>
                                       <td><?php echo "$calle $colonia $num_ext $demarcacion"; ?></td>
-                                      <td><?php echo "$horario"; ?></td>
+                                      <td><?php echo "$turno"; ?></td>
                                       <td><?php echo "$inmueble"; ?></td>
                                       <td>
                                         <strong>

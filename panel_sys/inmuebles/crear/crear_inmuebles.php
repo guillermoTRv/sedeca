@@ -11,9 +11,7 @@
 			<p class='text_label'>Cliente</p>
 			<select class='form-control select-sm_user' style='margin-top:-0px;' name='cliente_slc'>
 				<option value=''>--</option>
-				<option value='Senasica'>Senasica</option>
-				<option value='Cobach'>Cobach</option>
-				<option value='Caev'>Caev</option>
+				<?php include("lista_clientes.php"); ?>
 			</select>
 		</div>
 	</div>
@@ -49,14 +47,21 @@
 		<div class="col-md-4 espacio_input">
 			<p class='text_label'>Entidad Federativa</p>
 			<select class='form-control select-sm_user' style='margin-top:-0px;' name='entidad_slc'>
-				<option ></option>
+				<option value=''></option>
+				<option value='Estado de Mexico'>Estado de Mexico</option>
+				<option value='Ciudad de Mexico'>Ciudad de Mexico</option>
 			</select>
 		</div>
 
 		<div class="col-md-4 espacio_input">
 			<p class='text_label'>Delegacion/municipio</p>
 			<select class='form-control select-sm_user' style='margin-top:-0px;' name='demarcacion_slc'>
-				<option>--</option>
+				<option value=''>--</option>
+				<option value='Atizapan'>Atizapan</option>
+				<option value='Tlalnepantla'>Tlalneplanta</option>
+				<option value='GAM'>GAM</option>
+				<option value='Azcapotzalco'>Azcapotzalco</option>
+				<option value='Miguel Hidaldo'>Miguel Hidalgo</option>
 			</select>
 		</div>
 
@@ -109,9 +114,9 @@
 		</div>
 		<div class="col-md-4">
 			<p class='text_label'>*Referencias</p>
-			<textarea class="form-control" rows="3"></textarea>
-		</div>
-
+			<textarea class="form-control" rows="3" name='referencia'></textarea >
+		</div>	
+		<?php echo $toquen; ?>
 	</div>
 
   </form>

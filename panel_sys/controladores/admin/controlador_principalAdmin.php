@@ -13,7 +13,7 @@
                     break;
 
                     case 'personal_crear':
-                        include("panel_sys/crear_usuarios.php"); 
+                        include("panel_sys/crear_user/crear_usuarios.php"); 
                     break;
 
                     case 'personal_bajas':
@@ -27,7 +27,7 @@
                       break;
 
                     case 'inmuebles_crear':
-                        include("panel_sys/crear_inmuebles.php"); 
+                        include("panel_sys/inmuebles/crear/crear_inmuebles.php"); 
                       break;
                       
                     case 'inmuebles_bajas':

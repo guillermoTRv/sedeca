@@ -10,7 +10,6 @@
 	if ($type_user == 'administrador') {
 			
 		if ($controller == 0) {
-					    $empresa           =   sanitizar($_POST['empresa']);
 			
 			$name_txt          =   sanitizar($_POST['name_txt']);
 			$apell_uno         =   sanitizar($_POST['apell_uno']);
@@ -40,8 +39,7 @@
 			$final_contr       =   sanitizar($_POST['finalizacion_contrato']);	 
 
 
-			if ($empresa         !='' and
-				$name_txt        !='' and 
+			if ($name_txt        !='' and 
 				$apell_uno       !='' and 
 				$apell_dos       !='' and 
 				$nacimiento_date !='' and 
@@ -80,7 +78,7 @@
 					nombre_g           = '$name_txt' and
 					apellido_p		   = '$apell_uno' and
 					apellido_m         = '$apell_dos' and
-					fecha_nacimiento   = '$nacimiento_date' and
+					edad               = '$nacimiento_date' and
 					curp               = '$curp_txt' and
 					type_usuario       = '$usuario_txt' and
 					calle              = '$calle_txt' and
@@ -98,8 +96,7 @@
 					turno              = '$turno' and 
 					tipo_pago          = '$type_pago' and 
 					fecha_inicio_contrato  =  '$inicio_contr' and
-					fecha_finalizacion     =  '$final_contr' and
-					empresa                =  '$empresa'
+					fecha_finalizacion     =  '$final_contr'
 					";
 
 					$validacionEjecutar = mysqli_query($enlace,$validacionConsulta);  
@@ -116,6 +113,19 @@
 				}
 
 				if ($controllerUser == 1) {
+
+						$inmuebleConsulta = "SELECT name_inmueble,cliente FROM inmuebles WHERE id_inmueble='$inmueble_slc'";
+						$inmuebleEjecutar = mysqli_query($enlace,$inmuebleConsulta);
+						$inmuebleArray    = mysqli_fetch_array($inmuebleEjecutar);
+						$name_inmueble    = $inmuebleArray[0];
+						$name_cliente     = $inmuebleArray[1];
+
+
+						$empresaConsulta  = "SELECT id_cliente FROM clientes WHERE name_cliente = '$name_cliente'";
+						$empresaEjecutar  = mysqli_query($enlace,$empresaConsulta);
+						$empresaArray     = mysqli_fetch_array($empresaEjecutar);
+						$id_cliente       = $empresaArray[0];
+
 					
 						$validacionCurp = "SELECT curp FROM usuarios_datos_basicos WHERE curp ='$curp_txt'";
 						$validacionCurpEjec = mysqli_query($enlace,$validacionCurp);
@@ -124,13 +134,14 @@
 
 							$segundos= strtotime('now')-strtotime($nacimiento_date);
 							$diferencia_dias=intval($segundos/60/60/24);
-							$date_final = $diferencia_dias/365;
-							
+							$date_edadNON = $diferencia_dias/365;
+							$date_final   = substr($date_edadNON, 0,2);
+
 							$insertarDatos = "INSERT INTO usuarios_datos_basicos
 							(nombre_g,
 							 apellido_p,
 							 apellido_m,
-							 fecha_nacimiento,
+							 edad,
 							 curp,
 							 type_usuario,
 
@@ -159,7 +170,6 @@
 							 estado_repo,
 							 puesto,
 							 empresa
-
 							 ) VALUES(
 							 '$name_txt',
 							 '$apell_uno',
@@ -177,7 +187,7 @@
 							 '$num_mobil',
 							 'as',
 							 '$pass_txt',
-							 '$inmueble_slc',
+							 '$name_inmueble',
 							 '$supervisor',
 							 '$costo',
 							 '$turno',
@@ -188,7 +198,7 @@
 							 '$fecha',
 							 'no',
 							 'guardia',
-							 '$empresa'
+							 '$id_cliente'
 							 )";
 							$insertarDatosEjec = mysqli_query($enlace,$insertarDatos) or die("que onda");
 

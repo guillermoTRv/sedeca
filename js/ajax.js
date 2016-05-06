@@ -1,6 +1,6 @@
         $(function(){
                 $("#btn-alta-inmueble").click(function(){
-                    var url="../../panel_sys/procesar_inmueble.php";
+                    var url="../../panel_sys/inmuebles/crear/procesar_inmueble.php";
                     $.ajax({
                         type:"POST",
                         url:url,
