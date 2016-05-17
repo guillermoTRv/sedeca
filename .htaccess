@@ -3,4 +3,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 Rewriterule ^panel/(.*)/(.*) panel.php?us=$1&nav=$2
 Rewriterule ^panel/(.*) panel.php?us=$1
-Rewriterule ^portal/(.*) portal.php?us=$1
+Rewriterule ^portal portal.php

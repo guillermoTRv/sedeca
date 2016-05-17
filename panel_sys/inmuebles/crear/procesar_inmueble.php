@@ -18,11 +18,12 @@
 	 	$entidad       = sanitizar($_POST['entidad_slc']);
 	 	$demarcacion   = sanitizar($_POST['demarcacion_slc']);
 	 	$referencia    = sanitizar($_POST['referencia']);
+	 	$zona          = sanitizar($_POST['zona_slc']);
 
 
 	 	#faltaria la parte del codigo para validar que ningun campo quede vacio
 
-	 	if ($name_inmueble !='' and $cliente!='' and $calle!='' and $num_int!='' and $num_ext!='' and $postal!='' and $colonia!='' and $entidad!='' and $demarcacion!='' and $referencia!='') {
+	 	if ($name_inmueble !='' and $cliente!='' and $calle!='' and $num_int!='' and $num_ext!='' and $postal!='' and $colonia!='' and $entidad!='' and $demarcacion!='' and $referencia!='' and $zona!='') {
 	 		
 	 		$validacion_c = "SELECT * FROM inmuebles WHERE name_inmueble='$name_inmueble' and cliente='$cliente' and calle='$calle' and colonia='$colonia' and num_exterior='$num_ext' and num_interior='$num_int' and codigo_postal='$postal'";
 	 		$validacion_e = mysqli_query($enlace, $validacion_c);
@@ -65,7 +66,7 @@
 			 				   	      '$postal',
 			 				   	      'Ciudad de México',
 			 				   	      'Atizapan',
-			 				   	      'Poniente Norte',
+			 				   	      '$zona',
 			 				   	      'Aun no cuenta',
 			 				   	      '$fecha',
 			 				   	      '$fecha',

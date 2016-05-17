@@ -1,5 +1,4 @@
 <?php 
-      $popover     = "rel='popover' data-container='body' data-toggle='popover' data-placement='top'";
       $opcion_none = "data-content='Esta opción esta inhabilidada en esta sección'";
 
       if ($type_user == "administrador") {
@@ -33,6 +32,6 @@
         $('[rel="popover"]').popover({
             trigger:'hover',
             html:true,
-            delay:200,
+            delay:40,
       });
 </script>

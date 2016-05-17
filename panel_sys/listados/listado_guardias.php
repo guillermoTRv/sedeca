@@ -12,7 +12,7 @@
                     </thead>
                     <tbody>
                       <?php 
-                        $consultaGuardias         = "SELECT id_usuario,nombre_g,apellido_p,apellido_m,calle,colonia,num_exterior,demarcacion,turno,inmueble_asign,estado_repo,edad FROM  usuarios_datos_basicos WHERE empresa='$getEmpresa' ORDER BY id_usuario ASC";
+                        $consultaGuardias         = "SELECT id_usuario,nombre_g,apellido_p,apellido_m,calle,colonia,num_exterior,demarcacion,turno,inmueble_asign,estado_repo,edad FROM  usuarios_datos_basicos WHERE empresa='$getEmpresa' and puesto='guardia' ORDER BY id_usuario ASC";
                         $consultaGuardiasEjecutar = mysqli_query($enlace,$consultaGuardias) or die("No mames");
                         while ($consultaArray = mysqli_fetch_array($consultaGuardiasEjecutar)) {
                                 $id_usuario   = $consultaArray['id_usuario'];

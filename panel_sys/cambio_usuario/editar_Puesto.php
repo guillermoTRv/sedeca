@@ -20,13 +20,36 @@
 			<?php echo "Nombre del personal: ".$nombre_usuario."&nbsp;".$apellido_p."&nbsp;".$apellido_m ?>
 		</p>
 		<hr>
-		<form>
+		<form id="cambio_usuario" method="post" enctype="multipart/form-data">
 			<div class="form-group">
-		    	<label for="exampleInputEmail1">Puesto a cambiar</label>
+		    	<label>Puesto a cambiar</label>
 		    	<input disabled type="text" class="form-control input-sm" placeholder="Supervisor">
 		  	</div>
-		  	<button type="button" class="btn btn-default">Aceptar</button>
+		  	<hr>
+		
+		  	<div class="form-group">
+		  		<label>Seleccionar una empresa</label>
+		  		<select name="empresa_slc" class='form-control input-sm' id="empresa_slc">
+		  			<?php 
+						include("panel_sys/empresas_option.php");
+					?>
+		  		</select>
+		  	</div>
+		  	<div class="form-group">
+		  		<label>Selecciona un inmueble para la asignación</label>
+		  		<select name="inmueble_slc" class='form-control input-sm' id="inm_slc">
+		  			<option value="">--</option>
+		  		</select>
+		  	</div>
+			<?php echo $toquen ?>
+			<?php echo "<input type='hidden' name='user' value='$varUser'>" ?>
+		  	
+			<div id="m_v">
+				<button id="btn-cambio-user" type="button" class="btn btn-default">Aceptar</button>
+			</div>
 		</form>		
 
 	</div>
 </div>
+
+

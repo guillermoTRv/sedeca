@@ -10,7 +10,7 @@
                     </thead>
                     <tbody>
                         <?php 
-                        $consultaInmueblesC   = "SELECT distinct supervisor FROM inmuebles WHERE empresa = '$getEmpresa'";
+                        $consultaInmueblesC   = "SELECT distinct supervisor FROM inmuebles WHERE empresa = '$getEmpresa' and supervisor!='Aun no cuenta'";
                         $consultaInmueblesE   = mysqli_query($enlace,$consultaInmueblesC) or die("holaaaaa");
                         while ($consultaInmueblesA = mysqli_fetch_array($consultaInmueblesE)) {
                              
@@ -30,13 +30,14 @@
                                 $demarcacion  = $consultaArray['demarcacion'];
                                 $inmueble     = $consultaArray['inmueble_asign'];
                                 $estado       = $consultaArray['estado_repo'];
+                                $edad         = $consultaArray['edad'];
                                   if ($estado == 'si') {global $color; $color = 'green';}
                                   if ($estado == 'no') {global $color; $color = '#DF0101';}
 
                                 ?>
                                     <tr style='margin-bottom:7px;' <?php echo "ondblclick='myFunction$id_usuario()'"; ?>>
                                       <td><?php echo "$nombre_g $apellido_p $apellido_m" ?></td>
-                                      <td><?php echo "20"; ?></td>
+                                      <td><?php echo "$edad"; ?></td>
                                       <td><?php echo "$calle $colonia $num_ext $demarcacion"; ?></td>
                                       <td>
                                         <strong>

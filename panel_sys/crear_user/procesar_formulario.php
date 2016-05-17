@@ -16,7 +16,7 @@
 			$apell_dos		   =   sanitizar($_POST['apell_dos']);	
 			$nacimiento_date   =   sanitizar($_POST['nacimiento_date']);
 			$curp_txt          =   sanitizar($_POST['curp_txt']); 
-			$usuario_txt       =   sanitizar($_POST['usuario_txt']);       
+			#$usuario_txt       =   sanitizar($_POST['usuario_txt']);       
 			
 			$pass_txt          =   sanitizar($_POST['pass_txt']);
 			$calle_txt         =   sanitizar($_POST['calle_txt']);
@@ -44,7 +44,7 @@
 				$apell_dos       !='' and 
 				$nacimiento_date !='' and 
 				$curp_txt        !='' and 
-				$usuario_txt     !='' and 
+				#$usuario_txt     !='' and 
 				$pass_txt        !='' and 
 				$calle_txt       !='' and 
 				$num_ext         !='' and 
@@ -80,7 +80,7 @@
 					apellido_m         = '$apell_dos' and
 					edad               = '$nacimiento_date' and
 					curp               = '$curp_txt' and
-					type_usuario       = '$usuario_txt' and
+					#usuario            = '$usuario_txt' and
 					calle              = '$calle_txt' and
 					colonia            = '$colonia' and
 					num_exterior       = '$num_ext' and
@@ -137,13 +137,14 @@
 							$date_edadNON = $diferencia_dias/365;
 							$date_final   = substr($date_edadNON, 0,2);
 
+
 							$insertarDatos = "INSERT INTO usuarios_datos_basicos
 							(nombre_g,
 							 apellido_p,
 							 apellido_m,
 							 edad,
 							 curp,
-							 type_usuario,
+							 usuario,
 
 							 calle,
 							 colonia,
@@ -176,7 +177,7 @@
 							 '$apell_dos',
 							 '$date_final',
 							 '$curp_txt',
-							 '$usuario_txt',
+							 '--',
 							 '$calle_txt',
 							 '$colonia',
 							 '$num_ext',
@@ -201,6 +202,20 @@
 							 '$id_cliente'
 							 )";
 							$insertarDatosEjec = mysqli_query($enlace,$insertarDatos) or die("que onda");
+
+							$buscarIdparaNombre  = "SELECT id_usuario FROM usuarios_datos_basicos WHERE curp = '$curp_txt'";
+							$buscarIdparaNombre  = mysqli_query($enlace,$buscarIdparaNombre);
+							$buscarIdparaNombre  = mysqli_fetch_array($buscarIdparaNombre);
+							echo "<br>--".$id_usuarioInsertada = $buscarIdparaNombre['id_usuario'];
+
+							$nombreMinusculas      = strtolower($name_txt);
+ 
+							$nombreUsuario         = $nombreMinusculas.$id_usuarioInsertada;
+
+							$InsertarNombreUsuario = "UPDATE usuarios_datos_basicos SET usuario='$nombreUsuario' where curp ='$curp_txt'";
+							$InsertarNombreUsuario = mysqli_query($enlace,$InsertarNombreUsuario);							
+
+
 
 							/*
 								echo "<br>".$name_txt          =   sanitizar($_POST['name_txt']);
@@ -232,7 +247,8 @@
 
 							*/
 
-							ECHO "<p class='texto_principal'>El nuevo usuario fue creado exitosamente</p>";
+							ECHO "<p class='texto_principal'>El registro ah sido exitoso</p>
+							      <p class='texto_principal'>El nombre del usuario es $nombreUsuario</p>";
 						}
 						else{
 							echo "<p class='texto_principal'>Ese usuario ya estaba registrado</p>"; 

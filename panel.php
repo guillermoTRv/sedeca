@@ -8,12 +8,15 @@
 
    session_start();
    $type_user       =  $_SESSION['type_user'];
+   $id_personal     =  $_SESSION['id_usuario'];
    $name_user       =  $_SESSION['name_user'];
    
    include("panel_sys/get/principal_get.php");
 
    #podriamos hacer un control de url que solo permita ciertas url y en caso de que no reconozca algun redirgir a una pagina   
    include("panel_sys/datos_encabezado.php");
+   
+   $popover     = "rel='popover' data-container='body' data-toggle='popover' data-placement='top'";
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +30,7 @@
 
     <link href="<?php echo $ruta ?>/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo $ruta ?>/css/css_panel.css" rel="stylesheet">
+    <link rel="shortcut icon" href="<?php echo $ruta ?>/Iconos/apple-touch-icon-144-precomposed.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../../js/bootstrap.js"></script>
     <script src="<?php echo $ruta ?>/js/ajax.js"></script>

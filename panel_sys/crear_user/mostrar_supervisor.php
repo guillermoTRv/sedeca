@@ -11,3 +11,4 @@
 	echo "<option>$name_inmueble</option>";
 	
 ?>
+<option value="">.---</option>

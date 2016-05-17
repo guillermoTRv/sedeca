@@ -21,7 +21,7 @@
 			<div class="row">
 				<div class="col-md-6 espacio_input">
 					<p class='text_label'>Fecha de nacimiento</p>
-					<input type='date' class='form-control input-sm_user' name='nacimiento_date'>
+					<input type='date/time' class='form-control input-sm_user' name='nacimiento_date'>
 				</div>
 				<div class="col-md-6 espacio_input">
 					<p class='text_label'>Curp</p>
@@ -30,10 +30,11 @@
 			</div>
 			<div class="row">
 				<BR>
+				<!--
 				<div class="col-md-6 espacio_input">
 					<p class='text_label'>Usuario</p>
 					<input type='text' class='form-control input-sm_user' name='usuario_txt'>
-				</div>
+				</div>-->
 				<div class="col-md-6 espacio_input">
 					<p class='text_label'>Password</p>
 					<input type='password' class='form-control input-sm_user' name='pass_txt'>
@@ -77,7 +78,8 @@
 			<input type='text' class='form-control input-sm_user' name='postal'>
 		</div>
 		<div class="col-md-4 espacio_input">
-			<select class='form-control select-sm_user' name='entidad_slc'>
+			<p class="text_label">Entidad federativa</p>
+			<select class='form-control select-sm_user' name='entidad_slc' style='margin-top:-0px;'>
 				<option value=''>Entidad Federativa</option>
 				<option value='Estado de Mexico'>Estado de México</option>
 				<option value='Ciudad de Mexico'>Ciudad de México</option>
@@ -86,7 +88,8 @@
 	</div>
 	<div class="row" style='margin-top:10px;padding:10px;'>
 		<div class="col-md-4 espacio_input">
-			<select class='form-control select-sm_user' name='demarcacion_slc'>
+			<p class="text_label">Demarcación</p>
+			<select class='form-control select-sm_user' style='margin-top:-0px;' name='demarcacion_slc'>
 				<option value=''>Municipio o Delegacion</option>
 				<option value='Atizapan de Zaragoza'>Atizapan de Zaragoza</option>
 				<option value='Alvaro Obregon'>Alvaro Obregon</option>

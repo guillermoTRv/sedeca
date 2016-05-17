@@ -10,7 +10,7 @@
 */	
 	$servidor  ="localhost";
 	$usuario   ="root";
-	$password  ="";
+	$password  ="123qwezxc";
 	$bd        ="work";
 
 	global $enlace;

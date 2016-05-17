@@ -23,7 +23,27 @@
 
 
                               $estado_repo   = $array['estado_repo'];
-                              $supervisor    = $array['supervisor'];
+                              
+                              $id_supervisor = $array['supervisor'];
+                              
+                              if ($id_supervisor != "Aun no cuenta") {
+                                  $nameConsulta  = "SELECT nombre_g,apellido_p,apellido_m FROM usuarios_datos_basicos WHERE id_usuario = '$id_supervisor'";
+                                     $nameConsulta    = mysqli_query($enlace,$nameConsulta) or die("nop");
+                                     $nameConsulta    = mysqli_fetch_array($nameConsulta);
+                                     $nameUsuario     = $nameConsulta['nombre_g'];
+                                     $apellidoP       = $nameConsulta['apellido_p'];
+                                     $apellido_M      = $nameConsulta['apellido_m'];
+
+                                     #$supervisorTable = $id_supervisor;
+                                     $supervisorTable = $nameUsuario."&nbsp;".$apellidoP."&nbsp;".$apellido_M;
+
+                              }
+                              else{
+                                     $supervisorTable = $id_supervisor;
+                              }
+                              
+                              
+
                               if ($estado_repo == 'si') {global $color; $color = 'green';}
                               if ($estado_repo == 'no') {global $color; $color = '#DF0101';}
                                 
@@ -31,7 +51,7 @@
                               <tr <?php echo "ondblclick='myFunction$id_inmueble()'"; ?>>
                                 <td><?php echo $nombre ?></td>
                                 <td><?php echo $calle."&nbsp;".$num_exterior."&nbsp;".$colonia."&nbsp;".$demarcacion ?></td>
-                                <td><?php echo $supervisor ?></td>
+                                <td><?php echo $supervisorTable; ?></td>
                                 <td>
                                   <strong>
                                           <?php echo "<span class='glyphicon glyphicon-asterisk' style='color:$color;'><span id='$id_inmueble'style='font-size:.1em;color:rgba(0,0,0,0);'>$id_inmueble</span></span>"; ?>

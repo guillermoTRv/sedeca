@@ -22,6 +22,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="<?php echo $ruta ?>/Iconos/apple-touch-icon-144-precomposed.png">
     <!--Ponerle la etiqueta para que google no indexe el contenido-->
     <title>Listado de clientes</title>
     <link href="<?php echo $ruta ?>/css/bootstrap.css" rel="stylesheet">

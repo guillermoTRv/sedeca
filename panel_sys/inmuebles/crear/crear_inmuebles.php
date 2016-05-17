@@ -67,6 +67,20 @@
 
 	</div>
 
+	<div class="row" style='margin-top:20px;padding:10px;'>
+		<div class="col-md-4 espacio_input">
+			<p class="text_label">Zona</p>
+			<select name='zona_slc' class='form-control select-sm_user' style='margin-top:-0px;' >
+				<option value="zona centro">Zona centro</option>
+				<option value="zona norte">Zona norte</option>
+				<option value="zona noreste">Zona noreste</option>
+				<option value="zona centro occidente">Zona centro occidente</option>
+				<option value="zona sureste">Zona sureste</option>
+				<option value="zona centro oriente">Zona centro oriente</option>
+			</select>
+		</div>		
+	</div>
+
 	<div  class="row" style='margin-top:20px;padding:10px;'>
 		<div class="col-md-8">
 				<center>
