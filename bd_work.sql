@@ -76,3 +76,21 @@ CREATE TABLE clientes(
 	name_get varchar(30) NOT NULL,
 	primary key(id_cliente)
 )ENGINE=MyISAM DEFAULT CHARSET=Latin1;
+
+CREATE TABLE check_list(
+	id_checklist INT NOT NULL AUTO_INCREMENT, 
+	id_empresa INT NOT NULL,
+	categoria varchar(35),
+	situacion_name varchar(40),
+	status char(2),
+	fecha_registro_bd DATETIME,
+	primary key(id_checklist)
+)ENGINE=MyISAM DEFAULT CHARSET=Latin1;
+
+CREATE TABLE check_categoria(
+	id_relcategoria INT NOT NULL AUTO_INCREMENT,
+	id_empresa INT NOT NULL,
+	fecha_registro_bd DATETIME,
+	categoria varchar(35),
+	primary key(id_relcategoria)
+)ENGINE=MyISAM DEFAULT CHARSET=Latin1;

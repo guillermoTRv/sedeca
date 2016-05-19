@@ -18,6 +18,7 @@
 	   $check_nav = "check";
 	   $ruta_select = "check";
 	}
+
     if ($servicios_substr=="servicios") {
         $servicios_nav = "servicios";
         $ruta_select = "servicios";

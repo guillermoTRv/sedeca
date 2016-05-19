@@ -63,11 +63,21 @@
            })
         });
 
-         $(document).on("change","#empresa_slc",function(){
+        $(document).on("change","#empresa_slc",function(){
                    $("#empresa_slc option:selected").each(function () {
                     elegid=$(this).val();
                     $.post("../../panel_sys/cambio_usuario/inmuebles_select.php", { elegid: elegid }, function(data){
                     $("#inm_slc").html(data);
+                    
+                });
+           })
+        });
+
+        $(document).on("change","#cliente_check",function(){
+                   $("#cliente_check option:selected").each(function () {
+                    check=$(this).val();
+                    $.post("../../panel_sys/checklist/categoria_select.php", { check: check }, function(data){
+                    $("#categoria_check").html(data);
                     
                 });
            })

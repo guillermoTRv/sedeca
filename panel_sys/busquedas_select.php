@@ -23,12 +23,7 @@
         }
 
         if (isset($check_nav)) {
-            ?>
-            	<select class="form-control select-sm_user" style='margin:0px;' id='consulta-lista-personal'>
-			      	 <option value='interno' <?php if($nav=="check-interno"){ echo " selected"; } ?>>Interno</option>
-			      	 <option value='externo' <?php if($nav=="check-externo"){ echo " selected"; } ?>>Externo</option>
-			   	</select>
-            <?php 
+            include("varias_funciones/select_empresasCheck.php");
         }
 
         if (isset($servicios_nav)) {

@@ -15,11 +15,16 @@
 	    if($variableController!=1){
 	    	$complementoMas = $popover.$opcion_none;
 	    }
-		
+		if (isset($check_nav)) {
+			$complementoMas = "href='#modalCheck' data-toggle='modal'";
+		}
 		
 		?>
 		<a class='a_limpia' <?php echo "$complementoMas" ?>>
               <span class='glyphicon glyphicon-plus log_sm_mas'></span>&nbsp;&nbsp;&nbsp;
         </a>
 		<?php
+		include("panel_sys/checklist/modal_formchecklist.php");
 ?>
+
+

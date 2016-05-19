@@ -34,7 +34,7 @@
     class='glyphicon glyphicon-home icon_izq' <?php echo "style='color:$color_inm;'" ?>></span>
   </a>
   <a 
-     href="<?php echo "$ruta/panel/$user_get/check-interno" ?>"> 
+     href="<?php echo "$ruta/panel/$user_get/check-admin" ?>"> 
      <span 
      <?php echo $popover; ?>
      data-content="Administración de check list";

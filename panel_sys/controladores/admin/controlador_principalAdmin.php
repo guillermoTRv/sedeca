@@ -35,14 +35,13 @@
                     break;
 
 
-                    case 'check-interno':
+                    /*case 'check-interno':
                         include("panel_sys/listados/listado_check.php"); 
                       break;
 
                     case 'check-externo':
                         include("panel_sys/listados/listado_check.php"); 
-                      break;
-
+                      break;*/
 
 
                     case 'servicios':
@@ -73,6 +72,8 @@
         if (isset($inmuebles_datos)) {
                   include("panel_sys/inmuebles/edicion/principal_editarInmueble.php");
         }
-        
+        if (isset($check_nav)) {
+                  include("panel_sys/checklist/listado_checklist.php");
+        }
 
 ?>
