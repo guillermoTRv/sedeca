@@ -1,3 +1,4 @@
+
         $(function(){
                 $("#btn-alta-inmueble").click(function(){
                     var url="../../panel_sys/inmuebles/crear/procesar_inmueble.php";
@@ -17,7 +18,7 @@
 
         $(function(){
                 $("#btn-alta-user").click(function(){
-                    var url="../../panel_sys/crear_user/procesar_formulario.php";
+                    var url="../../panel_sys/crear_user/procesar_formUser.php";
                     $.ajax({
                         type:"POST",
                         url:url,
@@ -42,6 +43,23 @@
                         data:$("#cambio_usuario").serialize(),
                         success:function(data){
                             $("#m_v").html(data);
+                        }
+
+                    });
+
+                    return false;
+                });
+            });
+
+        $(function(){
+          $(document).on("click","#btn-alta-cliente",function(){
+                    var url="../../panel_sys/crear_user/procesar_formCliente.php";
+                    $.ajax({
+                        type:"POST",
+                        url:url,
+                        data:$("#alta_cliente").serialize(),
+                        success:function(data){
+                            $("#m_cliente").html(data);
                         }
 
                     });
@@ -83,3 +101,22 @@
            })
         });
 
+        $(document).on("change","#cliente_personal",function(){
+                   $("#cliente_personal option:selected").each(function () {
+                    personal=$(this).val();
+                    $.post("../../panel_sys/listados/clientes/inmueblesAjax.php", { personal: personal }, function(data){
+                    $("#inmuebles_personal").html(data);
+                    
+                });
+           })
+        });
+
+        $(document).on("change","#inmuebles_personal",function(){
+                   $("#inmuebles_personal option:selected").each(function () {
+                    personal=$(this).val();
+                    $.post("../../panel_sys/listados/clientes/listado_personalAjax.php", { personal: personal }, function(data){
+                    $("#listado_personal").html(data);
+                    
+                });
+           })
+        });

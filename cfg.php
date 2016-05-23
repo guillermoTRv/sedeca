@@ -7,7 +7,8 @@
 	
 	global $enlace;
 	$enlace=mysqli_connect($servidor,$usuario,$password,$bd);
-*/	
+*/
+
 	$servidor  ="localhost";
 	$usuario   ="root";
 	$password  ="123qwezxc";
@@ -15,5 +16,5 @@
 
 	global $enlace;
 	$enlace=mysqli_connect($servidor,$usuario,$password,$bd);
-		
+			
  ?>

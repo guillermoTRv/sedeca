@@ -41,7 +41,7 @@
      class='glyphicon glyphicon-list-alt icon_izq' <?php echo "style='color:$color_check;'" ?>></span>
   </a>
   <a  
-     href="<?php echo "$ruta/panel/$user_get/servicios" ?>">
+     href="<?php echo "$ruta/panel/$user_get/servicios-guardia-1" ?>">
      <span 
      <?php echo $popover; ?>
      data-content="Administración de costos y servicios";

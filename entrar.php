@@ -1,4 +1,5 @@
 <?php 
+	#fbsql_password(link_identifier)
 	include("ruta.php");
 	include("sanitizar.php");
 	include("evaluar_toquen.php");
@@ -18,49 +19,33 @@
 	}
 
 
+	$name_userCliente = substr($name_user, 0, 7);
 
-
-	if ($name_user == 'admin' and $pass_user == 'pass') {
+	if ($name_userCliente == "cliente") {
 		
-		registrar_entrada($name_user);
-		
-		session_start();
-		$_SESSION['type_user']    =  "administrador";
-
-
-		header("Location: $ruta/portal");
-	}
-
-	else{
-
-		$busquedaLogin      = "SELECT id_usuario,usuario,pass_xc,puesto FROM usuarios_datos_basicos WHERE usuario='$name_user' and pass_xc='$pass_user'";
-		$busquedaLogin      = mysqli_query($enlace,$busquedaLogin);
-		$busquedaLoginCount = mysqli_num_rows($busquedaLogin);
-        
-
+		$loginCliente      = "SELECT id_clienteuser,nombre_usuario FROM clientes_usuarios WHERE nombre_usuario='$name_user' and password='$pass_user'";
+		$loginCliente      = mysqli_query($enlace,$loginCliente);
+		$loginClienteCount = mysqli_num_rows($loginCliente);	
 	
 
-		if ($busquedaLoginCount == 1) {
-		
-		$busquedaLoginArray = mysqli_fetch_array($busquedaLogin);	
+		if ($loginClienteCount == 1) {
+			
 
-		echo $id_usuario	= $busquedaLoginArray['id_usuario'];
-		echo $usuario       = $busquedaLoginArray['usuario'];
-		echo $puesto        = $busquedaLoginArray['puesto'];
+			$loginClienteArray = mysqli_fetch_array($loginCliente);
+			$id_clienteuser    = $loginClienteArray['id_clienteuser']; 
+			$nombre_usuario    = $loginClienteArray['nombre_usuario'];
 
-		session_start();
-		$_SESSION['id_usuario']   =  $id_usuario;
-		$_SESSION['type_user']    =  $puesto;
-		$_SESSION['name_user']    =  $usuario;
+			session_start();
+			$_SESSION['id_usuario']   =  $id_clienteuser;
+			$_SESSION['type_user']    =  "cliente";
+			$_SESSION['name_user']    =  $nombre_usuario;
 
 
-		registrar_entrada($usuario);
+			$varRegistrer = $id_clienteuser."cliente";		
+			registrar_entrada("$varRegistrer");	
 
-		if ($puesto == 'guardia'   ) {header("Location: $ruta/panel/guardia/asistencia");}
-		if ($puesto == 'supervisor') {header("Location: $ruta/panel/supervisor/asistencia");} 	
-		
+			header("Location: $ruta/panel/cliente/personal-guardias");		
 
-		
 
 		}
 		else{
@@ -68,6 +53,64 @@
 		}
 
 
+
+	}
+
+
+
+
+	else{
+
+
+		if ($name_user == 'admin' and $pass_user == 'pass') {
+			
+			registrar_entrada($name_user);
+			
+			session_start();
+			$_SESSION['type_user']    =  "administrador";
+
+
+			header("Location: $ruta/portal");
+		}
+
+		else{
+
+			$busquedaLogin      = "SELECT id_usuario,usuario,puesto FROM usuarios_datos_basicos WHERE usuario='$name_user' and pass_xc='$pass_user'";
+			$busquedaLogin      = mysqli_query($enlace,$busquedaLogin);
+			$busquedaLoginCount = mysqli_num_rows($busquedaLogin);
+	        
+
+		
+
+			if ($busquedaLoginCount == 1) {
+			
+			$busquedaLoginArray = mysqli_fetch_array($busquedaLogin);	
+
+			echo $id_usuario	= $busquedaLoginArray['id_usuario'];
+			echo $usuario       = $busquedaLoginArray['usuario'];
+			echo $puesto        = $busquedaLoginArray['puesto'];
+
+			session_start();
+			$_SESSION['id_usuario']   =  $id_usuario;
+			$_SESSION['type_user']    =  $puesto;
+			$_SESSION['name_user']    =  $usuario;
+
+
+			registrar_entrada($usuario);
+
+			if ($puesto == 'guardia'   ) {header("Location: $ruta/panel/guardia/asistencia");}
+			if ($puesto == 'supervisor') {header("Location: $ruta/panel/supervisor/asistencia");} 	
+			
+
+			
+
+			}
+			else{
+				header("Location: $ruta");
+			}
+
+
+		}
 	}
 
 ?>

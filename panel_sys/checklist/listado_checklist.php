@@ -10,7 +10,7 @@
 
 <?php 
   if ($empresaSubstr == "admin") {
-        echo "<h4 class='texto_principal'>Administracion de checklist</h4><p class='texto_principal'>Seleccione una empresa en la parte de arriba</p>";
+        echo "<h4 class='texto_principal'>Administración de checklist</h4><p class='texto_principal'>Seleccione una empresa en la parte de arriba</p>";
   }
   else{
     ?>

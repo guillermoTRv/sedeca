@@ -10,11 +10,13 @@
 
 		}
 		
-		$altaUsuarios   = opciones_guardar($nav,"personal_crear","href='putos'","btn-alta-user");
+		$altaUsuarios   = opciones_guardar($nav,"personal_crear","href='#'","btn-alta-user");
 
-		$editarUsuarios = opciones_guardar($user_nav,"User","href='hola'","btn-editar-user");
+		$altaCliente    = opciones_guardar($nav,"personal_crear_cliente","href='#'","btn-alta-cliente");	
 
-		$altaInmueble   = opciones_guardar($nav,"inmuebles_crear","href='momento'","btn-alta-inmueble");
+		$editarUsuarios = opciones_guardar($user_nav,"User","href='#'","btn-editar-user");
+
+		$altaInmueble   = opciones_guardar($nav,"inmuebles_crear","href='#'","btn-alta-inmueble");
 
 		#$editarInmueble = opciones_guardar($inmueble_nav) 
 

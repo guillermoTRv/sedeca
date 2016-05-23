@@ -1,3 +1,4 @@
+
 <div class="row" style='margin-top:30px;' style='border:solid 1px #e06000;'>
   <div>
 	<div class="col-md-6">
@@ -15,15 +16,6 @@
 					    </div>
 					</div>
 
-					<div class="form-group">
-					    <label style='color:#202122;margin-top:4px;' class="control-label col-sm-3">Supervisores</label>
-					    <div class="col-sm-9">
-					      <div class="input-group input-group-sm">
-						  	<span class="input-group-addon">$</span>
-						  	<input type="text" class="form-control">
-						  </div>
-					    </div>
-					</div>
 
 					<p style='color:#E6E6E6;'>---</p>
 					<div class="form-group">
@@ -160,27 +152,6 @@
 					    </div>
 				</div>
 
-				<p style='color:#E6E6E6;'>---</p>
-
-				<div class="form-group">
-					    <label style='color:#202122;margin-top:4px;' class="control-label col-sm-7">Supervisor día normal</label>
-					    <div class="col-sm-5">
-					      <div class="input-group input-group-sm">
-						  	<span class="input-group-addon">$</span>
-						  	<input type="text" class="form-control">
-						  </div>
-					    </div>
-				</div>
-
-				<div class="form-group">
-					    <label style='color:#202122;margin-top:4px;' class="control-label col-sm-7">Supervisor fin de semana</label>
-					    <div class="col-sm-5">
-					      <div class="input-group input-group-sm">
-						  	<span class="input-group-addon">$</span>
-						  	<input type="text" class="form-control">
-						  </div>
-					    </div>
-				</div>
 
 				</form>
 			</div>

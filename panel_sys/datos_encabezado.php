@@ -83,5 +83,19 @@
        nombresConsulta($enlace,$id_personal);
 
    }
+   if ($type_user == 'cliente') {
+       $tipo_usuario_encabezado = $type_user;
+       $dato_izquierdo          = "";
+
+       $clienteName      =  "SELECT nombre_g,apellido_p,apellido_m FROM clientes_usuarios WHERE id_clienteuser='$id_personal'";
+       $clienteName      =  mysqli_query($enlace,$clienteName) or die("error");
+       $clienteNameArray =  mysqli_fetch_array($clienteName);
+
+       $nombre_g    = $clienteNameArray['nombre_g'];
+       $apellido_p  = $clienteNameArray['apellido_p'];
+       $apellido_m  = $clienteNameArray['apellido_m'];
+
+       $name_area   = $nombre_g."&nbsp;".$apellido_p."&nbsp;".$apellido_m;
+   }
   
 ?>

@@ -34,4 +34,5 @@
 		if ($cambioPuesto_sub == "Puesto") {
 			include("panel_sys/cambio_usuario/editar_Puesto.php");
 		}
+
 ?>

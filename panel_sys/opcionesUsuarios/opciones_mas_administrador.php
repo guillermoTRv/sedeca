@@ -5,6 +5,11 @@
        		$complementoMas     = "href='$rutaAgregar'";
        		$variableController = 1;
 		}
+		if ($nav == "personal-clientes") {
+			$rutaAgregar        = "$ruta/panel/$user_get/personal_crear_cliente";
+       		$complementoMas     = "href='$rutaAgregar'";
+       		$variableController = 1;	
+		}
 
 			    
 	    if (isset($inmuebles_nav)) {

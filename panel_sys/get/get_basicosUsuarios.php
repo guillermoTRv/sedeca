@@ -1,5 +1,5 @@
 <?php 
-	$personal_substr    = substr($nav,0,8);
+	   $personal_substr    = substr($nav,0,8);
 	   if ($personal_substr == "personal") {
 	       $personal_nav    =  "personal";
 	       global $ruta_select;  

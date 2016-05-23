@@ -31,6 +31,8 @@
                     break;
 			}
 	}
-
+  if ($type_user == "cliente") {
+      include("panel_sys/controladores/controlador_principalCliente.php");
+  }
   
 ?>

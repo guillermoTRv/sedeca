@@ -24,24 +24,10 @@
 			<p style="color:#f2f2f2;">Fecha de ingreso</p>
 			<p style="color:#f2f2f2;">Supervisor asignado</p>
 			<p style="color:#f2f2f2;">Tipo de pago</p>
-			<hr>
-		<div class="row">
-		<div style='color:white;' class="col-md-10">
-			Edición de datos 
-			<ul style='margin-top:10px;'>
-				<li><a class='a_limpia' href="<?php echo "$ruta/panel/$user_get/cambio-datosGenerales-".$idUser_nav; ?>">Modificar datos generales</a></li>
-				<li><a class='a_limpia' href="<?php echo "$ruta/panel/$user_get/cambio-datosUser-".$idUser_nav; ?>">Cambio de contraseña y nombre de usuario</a></li>
-				<li><a class='a_limpia' href="<?php echo "$ruta/panel/$user_get/cambio-foto-".$idUser_nav; ?>">Cambio de foto</a></li>
-				<li><a class='a_limpia' href="<?php echo "$ruta/panel/$user_get/cambio-InmuebleUser-".$idUser_nav; ?>">Cambio de Inmueble</a></li>
-				<li><a class='a_limpia' href="<?php echo "$ruta/panel/$user_get/cambio-condiciones-".$idUser_nav; ?>">Cambio de horario, sueldo, contrato</a></li>
-				<li><a class='a_limpia' href="<?php echo "$ruta/panel/$user_get/cambio-Puesto-".$idUser_nav; ?>">Cambio de puesto</a></li>
-			</ul>
-		</div>
-	</div>
 
+			<hr>
+
+			<p style="color:#f2f2f2;">Estado del usuario</p>			
 	</div>
 
 </div>
-
-
-

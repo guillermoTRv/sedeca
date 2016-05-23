@@ -16,6 +16,10 @@
                         include("panel_sys/crear_user/crear_usuarios.php"); 
                     break;
 
+                    case 'personal_crear_cliente':
+                        include("panel_sys/crear_user/crear_cliente.php"); 
+                    break;
+
                     case 'personal_bajas':
                         include("panel_sys/eliminar_elementos/listadoGuardias_eliminar.php"); 
                     break;                    
@@ -41,13 +45,13 @@
 
                     case 'check-externo':
                         include("panel_sys/listados/listado_check.php"); 
-                      break;*/
 
 
                     case 'servicios':
                         include("panel_sys/servicios.php"); 
                       break;
-
+                      break;*/
+                      
                     case 'reportes-normales':
                         include("panel_sys/reportes.php"); 
                       break;
@@ -58,7 +62,6 @@
                      
         } 
   
-
         if (isset($user_nav)) {
                   include("panel_sys/editar_usuario.php");
         }
@@ -74,6 +77,9 @@
         }
         if (isset($check_nav)) {
                   include("panel_sys/checklist/listado_checklist.php");
+        }
+        if (isset($servicios_nav)) {
+                  include("panel_sys/servicios/servicios.php"); 
         }
 
 ?>
