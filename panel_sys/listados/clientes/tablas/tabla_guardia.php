@@ -10,7 +10,7 @@
                                 $colonia      = $consultaArray['colonia'];
                                 $num_ext      = $consultaArray['num_exterior'];
                                 $demarcacion  = $consultaArray['demarcacion'];
-                                $turno      = $consultaArray['turno'];      
+                                $turno        = $consultaArray['turno'];      
                                 $inmueble     = $consultaArray['inmueble_asign'];
                                 $estado       = $consultaArray['estado_repo'];
                                 $edad         = $consultaArray['edad'];

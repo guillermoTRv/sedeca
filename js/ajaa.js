@@ -70,6 +70,47 @@
 
 
 
+        $(function(){
+        $(document).on("click","#btn-registroSupervisor",function(){
+                    var url="../../panel_sys/varias_funciones/registros_es/procesarRegistro_supervisor.php";
+                    $.ajax({
+                        type:"POST",
+                        url:url,
+                        data:$("#form-registroSupervisor").serialize(),
+                        dataType:"json",
+                        success:function(data){
+                            $("#deshabilitar_form").html(data.uno);
+                            $("#mensaje-registroSupervisor").html(data.dos);
+                        }
+
+                    });
+
+                    return false;
+                });
+            });
+
+
+        $(function(){
+          $(document).on("click","#btn-salidaSupervisor",function(){
+                    var url="../../panel_sys/varias_funciones/registros_es/procesarSalida_supervisor.php";
+                    $.ajax({
+                        type:"POST",
+                        url:url,
+                        data:$("#form-salidaSupervisor").serialize(),
+                        dataType:"json",
+                        success:function(data){
+                            $("#deshabilitar_formSalida").html(data.uno);
+                            $("#mensaje-salidaSupervisor").html(data.dos);
+                        }
+
+                    });
+
+                    return false;
+                });
+            });
+
+
+
 
         $(document).on("change","#inmueble_slc",function(){
                    $("#inmueble_slc option:selected").each(function () {
@@ -116,6 +157,16 @@
                     personal=$(this).val();
                     $.post("../../panel_sys/listados/clientes/listado_personalAjax.php", { personal: personal }, function(data){
                     $("#listado_personal").html(data);
+                    
+                });
+           })
+        });
+
+        $(document).on("change","#select_registro_supervisor",function(){
+                   $("#select_registro_supervisor option:selected").each(function () {
+                    registros_es=$(this).val();
+                    $.post("../../panel_sys/varias_funciones/registros_es/procesar_selectSupervisor.php", { registros_es: registros_es }, function(data){
+                    $("#campo_inmueble").html(data);
                     
                 });
            })

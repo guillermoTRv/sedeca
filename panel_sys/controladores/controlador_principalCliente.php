@@ -4,7 +4,6 @@
 	}
 
 
-
 	$personalSupervisorNav = substr($nav,0,21);
 	if ($personalSupervisorNav == 'personal-supervisores') {
 		include("panel_sys/listados/clientes/listado_personalSupervisor.php");
@@ -22,5 +21,7 @@
 		include("panel_sys/listados/clientes/listado_inmueblesCliente.php");		
 	}	
 
-
+	if ($nav == "servicios") {
+		include("panel_sys/servicios/clientes/servicios_cliente.php");
+	}
 ?>

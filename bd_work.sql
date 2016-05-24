@@ -3,8 +3,7 @@ CREATE TABLE `usuarios_datos_basicos` (
   `nombre_g` varchar(40) NOT NULL,
   `apellido_p` varchar(35) NOT NULL,
   `apellido_m` varchar(35) NOT NULL,
-  `edad` varchar(11) NOT NULL,
-  `curp` char(18) NOT NULL,
+   `curp` char(18) NOT NULL,
   `usuario` varchar(40) NOT NULL,
   `calle` varchar(40) NOT NULL,
   `colonia` varchar(30) NOT NULL,
@@ -113,3 +112,13 @@ CREATE TABLE clientes_usuarios(
 	primary key(id_clienteuser)
 
 )ENGINE=MyISAM DEFAULT CHARSET=Latin1;
+
+CREATE TABLE registros_es(
+	id_registro_es  INT NOT NULL AUTO_INCREMENT,
+	id_personal     INT NOT NULL,
+	hora_entrada    DATETIME NOT NULL,
+	hora_salida     DATETIME NOT NULL,
+	estado_registro varchar(10) NOT NULL,
+	inmueble        INT NULL,
+	primary key(id_registro_es)	
+)

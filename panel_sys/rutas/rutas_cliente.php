@@ -1,7 +1,3 @@
-  <?php 
-  
-  ?>  
-
   <a 
      href="<?php echo "$ruta/panel/$user_get/personal-guardias" ?>">
     <span 

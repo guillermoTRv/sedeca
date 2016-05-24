@@ -31,7 +31,7 @@
     <link rel="shortcut icon" href="<?php echo $ruta ?>/Iconos/apple-touch-icon-144-precomposed.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../../js/bootstrap.js"></script>
-    <script src="<?php echo $ruta ?>/js/aja.js"></script>
+    <script src="<?php echo $ruta ?>/js/ajaa.js"></script>
   </head>
   <body>
 

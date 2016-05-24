@@ -5,8 +5,8 @@
 			Buscar supervisores por:
 		</p>
 		<ul>
-			<li><a class='a_limpia' href="<?php echo $ruta."/panel/senasica/personal-supervisores-empresa" ?>">Por empresa</a></li>
-			<li><a class='a_limpia' href="<?php echo $ruta."/panel/senasica/personal-supervisores-empresa-inmueble" ?>">Por empresa y por inmueble</a></li>
+			<li><a class='a_limpia' href="<?php echo $ruta."/panel/cliente/personal-supervisores-empresa" ?>">Por empresa</a></li>
+			<li><a class='a_limpia' href="<?php echo $ruta."/panel/cliente/personal-supervisores-empresa-inmueble" ?>">Por empresa y por inmueble</a></li>
 		</ul>
 		<?php		
 	}
@@ -33,7 +33,7 @@
 					</select>
 				</div>
 				<div style='padding-top:25px;' class="col-md-3">
-					<a href="<?php echo $ruta."/panel/senasica/personal-supervisores" ?>" class="a_limpia">Regresar</a>
+					<a href="<?php echo $ruta."/panel/cliente/personal-supervisores" ?>" class="a_limpia">Regresar</a>
 				</div>
 			</div>
 
